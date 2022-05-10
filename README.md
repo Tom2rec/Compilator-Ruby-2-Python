@@ -1,7 +1,7 @@
 # Compilator-Ruby-2-Python
 
 ## Tokeny Ruby
-```ebnf
+```
 KEYWORD:        | alias | and | BEGIN | begin | break | case | class 
                 | def | defined? | do | else | elsif | END | end | ensure 
                 | false | for | if | in | module | next | nil | not | or | redo 
@@ -37,7 +37,7 @@ REGEXP:         | / {any_char} / [i|o|p] | %r char {any_char} char
 
 ## Gramatyka Ruby w postaci BNF
 
-```ebnf
+```
 PROGRAM:	COMPSTMT
 
 COMPSTMT:	STMT (TERM EXPR)* [TERM]
