@@ -145,7 +145,6 @@ DBL_BRACETS_EQ:	[]=
 ASSIGN_TILDE:	=~
 
 REGEXP:         | / {any_char} / [i|o|p] | %r char {any_char} char
-
 ```
 
 ## Gramatyka Ruby w postaci BNF
