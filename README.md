@@ -2,34 +2,147 @@
 
 ## Tokeny Ruby
 ```
-KEYWORD:        | alias | and | BEGIN | begin | break | case | class 
-                | def | defined? | do | else | elsif | END | end | ensure 
-                | false | for | if | in | module | next | nil | not | or | redo 
-                | rescue | retry | return | self | super | then | true 
-                | undef | unless | until | when | while | yield
+ALIAS:         	alias
+
+AND: 		and
+
+BEGIN:		BEGIN | begin
+
+BREAK:		break
+
+CASE:		case
+
+CLASS:		class
+
+DEF:		def
+
+DEFINED?:	defined?
+
+DO:		do
+
+ELSE:		else
+
+ELSEIF:		elsif
+
+END:		END | end
+
+ENSURE:		ensure 
+                
+FALSE:		false
+
+FOR:		for
+
+IF:		if
+
+IN:		in
+
+MODULE:		module
+
+NEXT:		next
+
+NIL:		nil
+
+NOT:		not
+
+OR:		or
+
+REDO:		redo 
+                
+RESCUE:		rescue
+
+RETRY:		retry
+
+RETURN:		return
+
+SELF:		self
+
+SUPER:		super
+
+THEN:		then
+
+TRUE:		true 
+
+UNDEF:		undef
+
+UNLESS:		unless
+
+UNTIL:		until
+
+WHEN:		when
+
+WHILE:		while
+
+YILED:		yield
 
 IDENTIFIER:    	^[a-zA-Z_][a-zA-Z0-9_]*$
 
-OP_ASGN:        | += | -= | *= | /= | %= | **= | &= | |= | ^= | <<= | >>=
-		        | &&= | ||= 
+PLUS_ASSIGN:    +=
 
-SYMBOL:         | :FNAME | :VARNAME
+MINUS_ASSIGN    -=
 
-FNAME:          | IDENTIFIER | .. | "|" | ˆ | & | <=> | == | ===
-                | =~ | > | >= | < | <= | + | - | * | / | % | **
-                | << | >> |  ̃ | +@ | -@ | [] | []=
+ASTERISK_ASSIGN:*=
 
-OPERATION:      | IDENTIFIER [! | ?]
+SLASH_ASSIGN:	/=
 
-VARNAME:        | GLOBAL | @IDENTIFIER | IDENTIFIER
+PERECENT_ASSIGN:%=
 
-GLOBAL:         | $IDENTIFIER | $any_char | $-any_char
+DBL_A_ASSIGN:	**=
 
-STRING:         | " {any_char} " | ’ {any_char} ’ | ‘ {any_char} ‘
+AMP_ASSIGN:	&=
 
-STRING2:        | %(Q|q|x)char {any_char} char
+PIPE_ASSIGN:	= 
 
-HERE_DOC:       | <<(IDENTIFIER | STRING) {any_char} IDENTIFIER
+CTRL_ASSIGN:	^=
+
+DBL_L_AR_ASSIGN:<<=
+
+DBL_R_AR_ASSIGN:>>=
+
+DBL_AMP_ASSIGN: &&=
+
+DBL_PIPE_ASSIGN:||=
+
+STRING:         " {any_char} " | ’ {any_char} ’ | ‘ {any_char} ‘
+
+DBL_DOT:	..
+
+PIPE:		|
+
+AMP:		&
+
+NOT_EQ:		<=>
+
+DBL_EQ:		==
+
+TRP_EQ:		===
+
+GT:		>
+
+GT_EQ:		>=
+
+LT:		<
+
+LT_EQ:		<=
+
+PLUS:		+
+
+MINUS:		-
+
+ASTERISK:	*
+
+PERCENT:	%
+
+DBL_STAR:	**
+
+DBL_ARR_L:	<<
+
+DBL_ARR_R:	>>
+
+DBL_BRACETS:	[]
+
+DBL_BRACETS_EQ:	[]=
+
+ASSIGN_TILDE:	=~
 
 REGEXP:         | / {any_char} / [i|o|p] | %r char {any_char} char
 
@@ -38,9 +151,10 @@ REGEXP:         | / {any_char} / [i|o|p] | %r char {any_char} char
 ## Gramatyka Ruby w postaci BNF
 
 ```
-PROGRAM:	COMPSTMT
 
-COMPSTMT:	STMT (TERM EXPR)* [TERM]
+PROGRAM:	START
+
+START:		STMT (TERM EXPR)* [TERM]
 
 STMT:		| CALL KEYWORD [| [BLOCK_VAR] |] COMPSTMT end
 		| KEYWORD FNAME
