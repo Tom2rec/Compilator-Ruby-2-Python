@@ -110,7 +110,7 @@ PIPE:		|
 
 AMP:		&
 
-NOT_EQ:		<=>
+SPACESHIP:	<=>
 
 DBL_EQ:		==
 
