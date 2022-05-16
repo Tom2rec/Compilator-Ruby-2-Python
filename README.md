@@ -1,78 +1,9 @@
 # Compilator-Ruby-2-Python
 
-## Tokeny **Ruby**
-```antlr
-LITERAL : '"' ( ESCAPED_QUOTE | ~('\n'|'\r') )*? '"'
-        | '\'' ( ESCAPED_QUOTE | ~('\n'|'\r') )*? '\'';
-
-COMMA : ',';
-SEMICOLON : ';';
-CRLF : '\r'? '\n';
-
-REQUIRE : 'require';
-END : 'end';
-DEF : 'def';
-RETURN : 'return';
-
-IF: 'if';
-ELSE : 'else';
-ELSIF : 'elsif';
-UNLESS : 'unless';
-WHILE : 'while';
-RETRY : 'retry';
-BREAK : 'break';
-FOR : 'for';
-
-TRUE : 'true';
-FALSE : 'false';
-
-PLUS : '+';
-MINUS : '-';
-MUL : '*';
-DIV : '/';
-MOD : '%';
-EXP : '**';
-
-EQUAL : '==';
-NOT_EQUAL : '!=';
-GREATER : '>';
-LESS : '<';
-LESS_EQUAL : '<=';
-GREATER_EQUAL : '>=';
-
-ASSIGN : '=';
-PLUS_ASSIGN : '+=';
-MINUS_ASSIGN : '-=';
-MUL_ASSIGN : '*=';
-DIV_ASSIGN : '/=';
-MOD_ASSIGN : '%=';
-EXP_ASSIGN : '**=';
-
-AND : 'and' | '&&';
-OR : 'or' | '||';
-NOT : 'not' | '!';
-
-LEFT_RBRACKET : '(';
-RIGHT_RBRACKET : ')';
-LEFT_SBRACKET : '[';
-RIGHT_SBRACKET : ']';
-
-NIL : 'nil';
-
-SL_COMMENT : ('#' ~('\r' | '\n')* '\r'? '\n') -> skip;
-ML_COMMENT : ('=begin' .*? '=end' '\r'? '\n') -> skip;
-WS : (' '|'\t')+ -> skip;
-
-INT : [0-9]+;
-FLOAT : [0-9]*'.'[0-9]+;
-ID : [a-zA-Z_][a-zA-Z0-9_]*;
-ID_GLOBAL : '$'ID;
-```
-
 ## Gramatyka **Ruby** w postaci **ANTLR4**
 
 ```antlr
-grammar Ruby;
+grammar RubyLexer;
 
 prog : expression_list;
 
@@ -83,7 +14,6 @@ expression_list : expression terminator
 
 expression : function_definition
            | function_inline_call
-           | require_block
            | if_statement
            | unless_statement
            | rvalue
@@ -99,8 +29,6 @@ global_set : global_name=id_global op=ASSIGN result=all_result;
 global_result : id_global;
 
 function_inline_call : function_call;
-
-require_block : REQUIRE literal_t;
 
 function_definition : function_definition_header function_definition_body END;
 
@@ -269,7 +197,6 @@ float_result : float_result op=( MUL | DIV | MOD ) float_result
 string_result : string_result op=MUL int_result
               | int_result op=MUL string_result
               | string_result op=PLUS string_result
-              | literal_t
               ;
 
 comparison_list : left=comparison op=AND right=comparison_list
@@ -288,7 +215,7 @@ comp_var : all_result
          ;
 
 lvalue : id_
-       //| id_global
+       | id_global
        ;
 
 rvalue : lvalue
@@ -309,7 +236,6 @@ rvalue : lvalue
        | assignment
 
        | function_call
-       | literal_t
        | bool_t
        | float_t
        | int_t
@@ -330,10 +256,8 @@ rvalue : lvalue
 
        | LEFT_RBRACKET rvalue RIGHT_RBRACKET
        ;
-       
-break_expression : BREAK;
 
-literal_t : LITERAL;
+break_expression : BREAK;
 
 float_t : FLOAT;
 
@@ -358,6 +282,70 @@ terminator : terminator SEMICOLON
 else_token : ELSE;
 
 crlf : CRLF;
+```
 
-fragment ESCAPED_QUOTE : '\\"';
+## Tokeny **Ruby**
+```antlr
+COMMA : ',';
+SEMICOLON : ';';
+CRLF : '\r'? '\n';
+
+REQUIRE : 'require';
+END : 'end';
+DEF : 'def';
+RETURN : 'return';
+
+IF: 'if';
+ELSE : 'else';
+ELSIF : 'elsif';
+UNLESS : 'unless';
+WHILE : 'while';
+RETRY : 'retry';
+BREAK : 'break';
+FOR : 'for';
+
+TRUE : 'true';
+FALSE : 'false';
+
+PLUS : '+';
+MINUS : '-';
+MUL : '*';
+DIV : '/';
+MOD : '%';
+EXP : '**';
+
+EQUAL : '==';
+NOT_EQUAL : '!=';
+GREATER : '>';
+LESS : '<';
+LESS_EQUAL : '<=';
+GREATER_EQUAL : '>=';
+
+ASSIGN : '=';
+PLUS_ASSIGN : '+=';
+MINUS_ASSIGN : '-=';
+MUL_ASSIGN : '*=';
+DIV_ASSIGN : '/=';
+MOD_ASSIGN : '%=';
+EXP_ASSIGN : '**=';
+
+AND : 'and' | '&&';
+OR : 'or' | '||';
+NOT : 'not' | '!';
+
+LEFT_RBRACKET : '(';
+RIGHT_RBRACKET : ')';
+LEFT_SBRACKET : '[';
+RIGHT_SBRACKET : ']';
+
+NIL : 'nil';
+
+SINGLE_LINE_COMMENT : ('#' ~('\r' | '\n')* '\r'? '\n') -> skip;
+MULTI_LINE_COMMENT : ('=begin' .*? '=end' '\r'? '\n') -> skip;
+WHITE_SPACE : (' '|'\t')+ -> skip;
+
+INT : [0-9]+;
+FLOAT : [0-9]*'.'[0-9]+;
+ID : [a-zA-Z_][a-zA-Z0-9_]*;
+ID_GLOBAL : '$'ID;
 ```
