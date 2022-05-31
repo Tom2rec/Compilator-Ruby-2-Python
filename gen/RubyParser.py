@@ -1,4 +1,4 @@
-# Generated from /home/tturek/Documents/personal/UST/Sophomore_2/Compilators/Compilator-Ruby-2-Python/Project/RubyLexer.g4 by ANTLR 4.10.1
+# Generated from /home/tturek/Documents/personal/UST/Sophomore_2/Compilators/Compilator-Ruby-2-Python/Project/Ruby.g4 by ANTLR 4.10.1
 # encoding: utf-8
 from antlr4 import *
 from io import StringIO
@@ -297,9 +297,9 @@ def serializedATN():
         761,767,769
     ]
 
-class RubyLexerParser ( Parser ):
+class RubyParser ( Parser ):
 
-    grammarFileName = "RubyLexer.g4"
+    grammarFileName = "Ruby.g4"
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
@@ -486,11 +486,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def expression_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.Expression_listContext,0)
+            return self.getTypedRuleContext(RubyParser.Expression_listContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_prog
+            return RubyParser.RULE_prog
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterProg" ):
@@ -511,7 +511,7 @@ class RubyLexerParser ( Parser ):
 
     def prog(self):
 
-        localctx = RubyLexerParser.ProgContext(self, self._ctx, self.state)
+        localctx = RubyParser.ProgContext(self, self._ctx, self.state)
         self.enterRule(localctx, 0, self.RULE_prog)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -534,19 +534,19 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(RubyLexerParser.ExpressionContext,0)
+            return self.getTypedRuleContext(RubyParser.ExpressionContext,0)
 
 
         def terminator(self):
-            return self.getTypedRuleContext(RubyLexerParser.TerminatorContext,0)
+            return self.getTypedRuleContext(RubyParser.TerminatorContext,0)
 
 
         def expression_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.Expression_listContext,0)
+            return self.getTypedRuleContext(RubyParser.Expression_listContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_expression_list
+            return RubyParser.RULE_expression_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterExpression_list" ):
@@ -567,7 +567,7 @@ class RubyLexerParser ( Parser ):
     def expression_list(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.Expression_listContext(self, self._ctx, _parentState)
+        localctx = RubyParser.Expression_listContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 2
         self.enterRecursionRule(localctx, 2, self.RULE_expression_list, _p)
@@ -576,13 +576,13 @@ class RubyLexerParser ( Parser ):
             self.state = 141
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [RubyLexerParser.DEF, RubyLexerParser.RETURN, RubyLexerParser.IF, RubyLexerParser.UNLESS, RubyLexerParser.WHILE, RubyLexerParser.FOR, RubyLexerParser.TRUE, RubyLexerParser.FALSE, RubyLexerParser.NOT, RubyLexerParser.LEFT_RBRACKET, RubyLexerParser.NIL, RubyLexerParser.INT, RubyLexerParser.FLOAT, RubyLexerParser.ID, RubyLexerParser.ID_GLOBAL]:
+            if token in [RubyParser.DEF, RubyParser.RETURN, RubyParser.IF, RubyParser.UNLESS, RubyParser.WHILE, RubyParser.FOR, RubyParser.TRUE, RubyParser.FALSE, RubyParser.NOT, RubyParser.LEFT_RBRACKET, RubyParser.NIL, RubyParser.INT, RubyParser.FLOAT, RubyParser.ID, RubyParser.ID_GLOBAL]:
                 self.state = 137
                 self.expression()
                 self.state = 138
                 self.terminator(0)
                 pass
-            elif token in [RubyLexerParser.SEMICOLON, RubyLexerParser.CRLF]:
+            elif token in [RubyParser.SEMICOLON, RubyParser.CRLF]:
                 self.state = 140
                 self.terminator(0)
                 pass
@@ -598,7 +598,7 @@ class RubyLexerParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    localctx = RubyLexerParser.Expression_listContext(self, _parentctx, _parentState)
+                    localctx = RubyParser.Expression_listContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_expression_list)
                     self.state = 143
                     if not self.precpred(self._ctx, 2):
@@ -629,39 +629,39 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def function_definition(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_definitionContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_definitionContext,0)
 
 
         def function_inline_call(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_inline_callContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_inline_callContext,0)
 
 
         def if_statement(self):
-            return self.getTypedRuleContext(RubyLexerParser.If_statementContext,0)
+            return self.getTypedRuleContext(RubyParser.If_statementContext,0)
 
 
         def unless_statement(self):
-            return self.getTypedRuleContext(RubyLexerParser.Unless_statementContext,0)
+            return self.getTypedRuleContext(RubyParser.Unless_statementContext,0)
 
 
         def rvalue(self):
-            return self.getTypedRuleContext(RubyLexerParser.RvalueContext,0)
+            return self.getTypedRuleContext(RubyParser.RvalueContext,0)
 
 
         def return_statement(self):
-            return self.getTypedRuleContext(RubyLexerParser.Return_statementContext,0)
+            return self.getTypedRuleContext(RubyParser.Return_statementContext,0)
 
 
         def while_statement(self):
-            return self.getTypedRuleContext(RubyLexerParser.While_statementContext,0)
+            return self.getTypedRuleContext(RubyParser.While_statementContext,0)
 
 
         def for_statement(self):
-            return self.getTypedRuleContext(RubyLexerParser.For_statementContext,0)
+            return self.getTypedRuleContext(RubyParser.For_statementContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_expression
+            return RubyParser.RULE_expression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterExpression" ):
@@ -682,7 +682,7 @@ class RubyLexerParser ( Parser ):
 
     def expression(self):
 
-        localctx = RubyLexerParser.ExpressionContext(self, self._ctx, self.state)
+        localctx = RubyParser.ExpressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 4, self.RULE_expression)
         try:
             self.state = 160
@@ -757,18 +757,18 @@ class RubyLexerParser ( Parser ):
             self.global_name = None # Id_globalContext
 
         def lvalue(self):
-            return self.getTypedRuleContext(RubyLexerParser.LvalueContext,0)
+            return self.getTypedRuleContext(RubyParser.LvalueContext,0)
 
 
         def ASSIGN(self):
-            return self.getToken(RubyLexerParser.ASSIGN, 0)
+            return self.getToken(RubyParser.ASSIGN, 0)
 
         def id_global(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_globalContext,0)
+            return self.getTypedRuleContext(RubyParser.Id_globalContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_global_get
+            return RubyParser.RULE_global_get
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGlobal_get" ):
@@ -789,14 +789,14 @@ class RubyLexerParser ( Parser ):
 
     def global_get(self):
 
-        localctx = RubyLexerParser.Global_getContext(self, self._ctx, self.state)
+        localctx = RubyParser.Global_getContext(self, self._ctx, self.state)
         self.enterRule(localctx, 6, self.RULE_global_get)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 162
             localctx.var_name = self.lvalue()
             self.state = 163
-            localctx.op = self.match(RubyLexerParser.ASSIGN)
+            localctx.op = self.match(RubyParser.ASSIGN)
             self.state = 164
             localctx.global_name = self.id_global()
         except RecognitionException as re:
@@ -819,18 +819,18 @@ class RubyLexerParser ( Parser ):
             self.result = None # All_resultContext
 
         def id_global(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_globalContext,0)
+            return self.getTypedRuleContext(RubyParser.Id_globalContext,0)
 
 
         def ASSIGN(self):
-            return self.getToken(RubyLexerParser.ASSIGN, 0)
+            return self.getToken(RubyParser.ASSIGN, 0)
 
         def all_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.All_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.All_resultContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_global_set
+            return RubyParser.RULE_global_set
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGlobal_set" ):
@@ -851,14 +851,14 @@ class RubyLexerParser ( Parser ):
 
     def global_set(self):
 
-        localctx = RubyLexerParser.Global_setContext(self, self._ctx, self.state)
+        localctx = RubyParser.Global_setContext(self, self._ctx, self.state)
         self.enterRule(localctx, 8, self.RULE_global_set)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 166
             localctx.global_name = self.id_global()
             self.state = 167
-            localctx.op = self.match(RubyLexerParser.ASSIGN)
+            localctx.op = self.match(RubyParser.ASSIGN)
             self.state = 168
             localctx.result = self.all_result()
         except RecognitionException as re:
@@ -878,11 +878,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def id_global(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_globalContext,0)
+            return self.getTypedRuleContext(RubyParser.Id_globalContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_global_result
+            return RubyParser.RULE_global_result
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterGlobal_result" ):
@@ -903,7 +903,7 @@ class RubyLexerParser ( Parser ):
 
     def global_result(self):
 
-        localctx = RubyLexerParser.Global_resultContext(self, self._ctx, self.state)
+        localctx = RubyParser.Global_resultContext(self, self._ctx, self.state)
         self.enterRule(localctx, 10, self.RULE_global_result)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -926,11 +926,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def function_call(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_callContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_callContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_inline_call
+            return RubyParser.RULE_function_inline_call
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_inline_call" ):
@@ -951,7 +951,7 @@ class RubyLexerParser ( Parser ):
 
     def function_inline_call(self):
 
-        localctx = RubyLexerParser.Function_inline_callContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_inline_callContext(self, self._ctx, self.state)
         self.enterRule(localctx, 12, self.RULE_function_inline_call)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -974,18 +974,18 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def function_definition_header(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_definition_headerContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_definition_headerContext,0)
 
 
         def function_definition_body(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_definition_bodyContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_definition_bodyContext,0)
 
 
         def END(self):
-            return self.getToken(RubyLexerParser.END, 0)
+            return self.getToken(RubyParser.END, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_definition
+            return RubyParser.RULE_function_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_definition" ):
@@ -1006,7 +1006,7 @@ class RubyLexerParser ( Parser ):
 
     def function_definition(self):
 
-        localctx = RubyLexerParser.Function_definitionContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 14, self.RULE_function_definition)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -1015,7 +1015,7 @@ class RubyLexerParser ( Parser ):
             self.state = 175
             self.function_definition_body()
             self.state = 176
-            self.match(RubyLexerParser.END)
+            self.match(RubyParser.END)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1033,11 +1033,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def expression_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.Expression_listContext,0)
+            return self.getTypedRuleContext(RubyParser.Expression_listContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_definition_body
+            return RubyParser.RULE_function_definition_body
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_definition_body" ):
@@ -1058,7 +1058,7 @@ class RubyLexerParser ( Parser ):
 
     def function_definition_body(self):
 
-        localctx = RubyLexerParser.Function_definition_bodyContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_definition_bodyContext(self, self._ctx, self.state)
         self.enterRule(localctx, 16, self.RULE_function_definition_body)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -1081,22 +1081,22 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def DEF(self):
-            return self.getToken(RubyLexerParser.DEF, 0)
+            return self.getToken(RubyParser.DEF, 0)
 
         def function_name(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_nameContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_nameContext,0)
 
 
         def crlf(self):
-            return self.getTypedRuleContext(RubyLexerParser.CrlfContext,0)
+            return self.getTypedRuleContext(RubyParser.CrlfContext,0)
 
 
         def function_definition_params(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_definition_paramsContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_definition_paramsContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_definition_header
+            return RubyParser.RULE_function_definition_header
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_definition_header" ):
@@ -1117,7 +1117,7 @@ class RubyLexerParser ( Parser ):
 
     def function_definition_header(self):
 
-        localctx = RubyLexerParser.Function_definition_headerContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_definition_headerContext(self, self._ctx, self.state)
         self.enterRule(localctx, 18, self.RULE_function_definition_header)
         try:
             self.state = 189
@@ -1126,7 +1126,7 @@ class RubyLexerParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 180
-                self.match(RubyLexerParser.DEF)
+                self.match(RubyParser.DEF)
                 self.state = 181
                 self.function_name()
                 self.state = 182
@@ -1136,7 +1136,7 @@ class RubyLexerParser ( Parser ):
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 184
-                self.match(RubyLexerParser.DEF)
+                self.match(RubyParser.DEF)
                 self.state = 185
                 self.function_name()
                 self.state = 186
@@ -1163,11 +1163,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def id_(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_Context,0)
+            return self.getTypedRuleContext(RubyParser.Id_Context,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_name
+            return RubyParser.RULE_function_name
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_name" ):
@@ -1188,7 +1188,7 @@ class RubyLexerParser ( Parser ):
 
     def function_name(self):
 
-        localctx = RubyLexerParser.Function_nameContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_nameContext(self, self._ctx, self.state)
         self.enterRule(localctx, 20, self.RULE_function_name)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -1211,17 +1211,17 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def LEFT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.LEFT_RBRACKET, 0)
+            return self.getToken(RubyParser.LEFT_RBRACKET, 0)
 
         def RIGHT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.RIGHT_RBRACKET, 0)
+            return self.getToken(RubyParser.RIGHT_RBRACKET, 0)
 
         def function_definition_params_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_definition_params_listContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_definition_params_listContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_definition_params
+            return RubyParser.RULE_function_definition_params
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_definition_params" ):
@@ -1242,7 +1242,7 @@ class RubyLexerParser ( Parser ):
 
     def function_definition_params(self):
 
-        localctx = RubyLexerParser.Function_definition_paramsContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_definition_paramsContext(self, self._ctx, self.state)
         self.enterRule(localctx, 22, self.RULE_function_definition_params)
         try:
             self.state = 200
@@ -1251,19 +1251,19 @@ class RubyLexerParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 193
-                self.match(RubyLexerParser.LEFT_RBRACKET)
+                self.match(RubyParser.LEFT_RBRACKET)
                 self.state = 194
-                self.match(RubyLexerParser.RIGHT_RBRACKET)
+                self.match(RubyParser.RIGHT_RBRACKET)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 195
-                self.match(RubyLexerParser.LEFT_RBRACKET)
+                self.match(RubyParser.LEFT_RBRACKET)
                 self.state = 196
                 self.function_definition_params_list(0)
                 self.state = 197
-                self.match(RubyLexerParser.RIGHT_RBRACKET)
+                self.match(RubyParser.RIGHT_RBRACKET)
                 pass
 
             elif la_ == 3:
@@ -1290,18 +1290,18 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def function_definition_param_id(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_definition_param_idContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_definition_param_idContext,0)
 
 
         def function_definition_params_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_definition_params_listContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_definition_params_listContext,0)
 
 
         def COMMA(self):
-            return self.getToken(RubyLexerParser.COMMA, 0)
+            return self.getToken(RubyParser.COMMA, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_definition_params_list
+            return RubyParser.RULE_function_definition_params_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_definition_params_list" ):
@@ -1322,7 +1322,7 @@ class RubyLexerParser ( Parser ):
     def function_definition_params_list(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.Function_definition_params_listContext(self, self._ctx, _parentState)
+        localctx = RubyParser.Function_definition_params_listContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 24
         self.enterRecursionRule(localctx, 24, self.RULE_function_definition_params_list, _p)
@@ -1339,14 +1339,14 @@ class RubyLexerParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    localctx = RubyLexerParser.Function_definition_params_listContext(self, _parentctx, _parentState)
+                    localctx = RubyParser.Function_definition_params_listContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_function_definition_params_list)
                     self.state = 205
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                     self.state = 206
-                    self.match(RubyLexerParser.COMMA)
+                    self.match(RubyParser.COMMA)
                     self.state = 207
                     self.function_definition_param_id() 
                 self.state = 212
@@ -1370,11 +1370,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def id_(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_Context,0)
+            return self.getTypedRuleContext(RubyParser.Id_Context,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_definition_param_id
+            return RubyParser.RULE_function_definition_param_id
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_definition_param_id" ):
@@ -1395,7 +1395,7 @@ class RubyLexerParser ( Parser ):
 
     def function_definition_param_id(self):
 
-        localctx = RubyLexerParser.Function_definition_param_idContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_definition_param_idContext(self, self._ctx, self.state)
         self.enterRule(localctx, 26, self.RULE_function_definition_param_id)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -1418,14 +1418,14 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def RETURN(self):
-            return self.getToken(RubyLexerParser.RETURN, 0)
+            return self.getToken(RubyParser.RETURN, 0)
 
         def all_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.All_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.All_resultContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_return_statement
+            return RubyParser.RULE_return_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterReturn_statement" ):
@@ -1446,12 +1446,12 @@ class RubyLexerParser ( Parser ):
 
     def return_statement(self):
 
-        localctx = RubyLexerParser.Return_statementContext(self, self._ctx, self.state)
+        localctx = RubyParser.Return_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 28, self.RULE_return_statement)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 215
-            self.match(RubyLexerParser.RETURN)
+            self.match(RubyParser.RETURN)
             self.state = 216
             self.all_result()
         except RecognitionException as re:
@@ -1473,21 +1473,21 @@ class RubyLexerParser ( Parser ):
             self.params = None # Function_call_param_listContext
 
         def LEFT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.LEFT_RBRACKET, 0)
+            return self.getToken(RubyParser.LEFT_RBRACKET, 0)
 
         def RIGHT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.RIGHT_RBRACKET, 0)
+            return self.getToken(RubyParser.RIGHT_RBRACKET, 0)
 
         def function_name(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_nameContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_nameContext,0)
 
 
         def function_call_param_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_call_param_listContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_call_param_listContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_call
+            return RubyParser.RULE_function_call
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_call" ):
@@ -1508,7 +1508,7 @@ class RubyLexerParser ( Parser ):
 
     def function_call(self):
 
-        localctx = RubyLexerParser.Function_callContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_callContext(self, self._ctx, self.state)
         self.enterRule(localctx, 30, self.RULE_function_call)
         try:
             self.state = 230
@@ -1519,11 +1519,11 @@ class RubyLexerParser ( Parser ):
                 self.state = 218
                 localctx.name = self.function_name()
                 self.state = 219
-                self.match(RubyLexerParser.LEFT_RBRACKET)
+                self.match(RubyParser.LEFT_RBRACKET)
                 self.state = 220
                 localctx.params = self.function_call_param_list()
                 self.state = 221
-                self.match(RubyLexerParser.RIGHT_RBRACKET)
+                self.match(RubyParser.RIGHT_RBRACKET)
                 pass
 
             elif la_ == 2:
@@ -1539,9 +1539,9 @@ class RubyLexerParser ( Parser ):
                 self.state = 226
                 localctx.name = self.function_name()
                 self.state = 227
-                self.match(RubyLexerParser.LEFT_RBRACKET)
+                self.match(RubyParser.LEFT_RBRACKET)
                 self.state = 228
-                self.match(RubyLexerParser.RIGHT_RBRACKET)
+                self.match(RubyParser.RIGHT_RBRACKET)
                 pass
 
 
@@ -1562,11 +1562,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def function_call_params(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_call_paramsContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_call_paramsContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_call_param_list
+            return RubyParser.RULE_function_call_param_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_call_param_list" ):
@@ -1587,7 +1587,7 @@ class RubyLexerParser ( Parser ):
 
     def function_call_param_list(self):
 
-        localctx = RubyLexerParser.Function_call_param_listContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_call_param_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 32, self.RULE_function_call_param_list)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -1610,18 +1610,18 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def function_param(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_paramContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_paramContext,0)
 
 
         def function_call_params(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_call_paramsContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_call_paramsContext,0)
 
 
         def COMMA(self):
-            return self.getToken(RubyLexerParser.COMMA, 0)
+            return self.getToken(RubyParser.COMMA, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_call_params
+            return RubyParser.RULE_function_call_params
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_call_params" ):
@@ -1642,7 +1642,7 @@ class RubyLexerParser ( Parser ):
     def function_call_params(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.Function_call_paramsContext(self, self._ctx, _parentState)
+        localctx = RubyParser.Function_call_paramsContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 34
         self.enterRecursionRule(localctx, 34, self.RULE_function_call_params, _p)
@@ -1659,14 +1659,14 @@ class RubyLexerParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    localctx = RubyLexerParser.Function_call_paramsContext(self, _parentctx, _parentState)
+                    localctx = RubyParser.Function_call_paramsContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_function_call_params)
                     self.state = 237
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                     self.state = 238
-                    self.match(RubyLexerParser.COMMA)
+                    self.match(RubyParser.COMMA)
                     self.state = 239
                     self.function_param() 
                 self.state = 244
@@ -1690,15 +1690,15 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def function_unnamed_param(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_unnamed_paramContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_unnamed_paramContext,0)
 
 
         def function_named_param(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_named_paramContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_named_paramContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_param
+            return RubyParser.RULE_function_param
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_param" ):
@@ -1719,7 +1719,7 @@ class RubyLexerParser ( Parser ):
 
     def function_param(self):
 
-        localctx = RubyLexerParser.Function_paramContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_paramContext(self, self._ctx, self.state)
         self.enterRule(localctx, 36, self.RULE_function_param)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -1754,23 +1754,23 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def int_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_resultContext,0)
 
 
         def float_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Float_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Float_resultContext,0)
 
 
         def string_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.String_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.String_resultContext,0)
 
 
         def dynamic_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Dynamic_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Dynamic_resultContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_unnamed_param
+            return RubyParser.RULE_function_unnamed_param
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_unnamed_param" ):
@@ -1791,7 +1791,7 @@ class RubyLexerParser ( Parser ):
 
     def function_unnamed_param(self):
 
-        localctx = RubyLexerParser.Function_unnamed_paramContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_unnamed_paramContext(self, self._ctx, self.state)
         self.enterRule(localctx, 38, self.RULE_function_unnamed_param)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -1837,30 +1837,30 @@ class RubyLexerParser ( Parser ):
             self.op = None # Token
 
         def id_(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_Context,0)
+            return self.getTypedRuleContext(RubyParser.Id_Context,0)
 
 
         def ASSIGN(self):
-            return self.getToken(RubyLexerParser.ASSIGN, 0)
+            return self.getToken(RubyParser.ASSIGN, 0)
 
         def int_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_resultContext,0)
 
 
         def float_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Float_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Float_resultContext,0)
 
 
         def string_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.String_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.String_resultContext,0)
 
 
         def dynamic_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Dynamic_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Dynamic_resultContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_named_param
+            return RubyParser.RULE_function_named_param
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_named_param" ):
@@ -1881,14 +1881,14 @@ class RubyLexerParser ( Parser ):
 
     def function_named_param(self):
 
-        localctx = RubyLexerParser.Function_named_paramContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_named_paramContext(self, self._ctx, self.state)
         self.enterRule(localctx, 40, self.RULE_function_named_param)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 255
             self.id_()
             self.state = 256
-            localctx.op = self.match(RubyLexerParser.ASSIGN)
+            localctx.op = self.match(RubyParser.ASSIGN)
             self.state = 261
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,10,self._ctx)
@@ -1930,11 +1930,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def function_call(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_callContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_callContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_function_call_assignment
+            return RubyParser.RULE_function_call_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFunction_call_assignment" ):
@@ -1955,7 +1955,7 @@ class RubyLexerParser ( Parser ):
 
     def function_call_assignment(self):
 
-        localctx = RubyLexerParser.Function_call_assignmentContext(self, self._ctx, self.state)
+        localctx = RubyParser.Function_call_assignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 42, self.RULE_function_call_assignment)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -1978,27 +1978,27 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def int_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_resultContext,0)
 
 
         def float_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Float_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Float_resultContext,0)
 
 
         def string_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.String_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.String_resultContext,0)
 
 
         def dynamic_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Dynamic_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Dynamic_resultContext,0)
 
 
         def global_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Global_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Global_resultContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_all_result
+            return RubyParser.RULE_all_result
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAll_result" ):
@@ -2019,7 +2019,7 @@ class RubyLexerParser ( Parser ):
 
     def all_result(self):
 
-        localctx = RubyLexerParser.All_resultContext(self, self._ctx, self.state)
+        localctx = RubyParser.All_resultContext(self, self._ctx, self.state)
         self.enterRule(localctx, 44, self.RULE_all_result)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -2069,11 +2069,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def if_elsif_statement(self):
-            return self.getTypedRuleContext(RubyLexerParser.If_elsif_statementContext,0)
+            return self.getTypedRuleContext(RubyParser.If_elsif_statementContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_elsif_statement
+            return RubyParser.RULE_elsif_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterElsif_statement" ):
@@ -2094,7 +2094,7 @@ class RubyLexerParser ( Parser ):
 
     def elsif_statement(self):
 
-        localctx = RubyLexerParser.Elsif_statementContext(self, self._ctx, self.state)
+        localctx = RubyParser.Elsif_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 46, self.RULE_elsif_statement)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -2117,36 +2117,36 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def ELSIF(self):
-            return self.getToken(RubyLexerParser.ELSIF, 0)
+            return self.getToken(RubyParser.ELSIF, 0)
 
         def cond_expression(self):
-            return self.getTypedRuleContext(RubyLexerParser.Cond_expressionContext,0)
+            return self.getTypedRuleContext(RubyParser.Cond_expressionContext,0)
 
 
         def crlf(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.CrlfContext)
+                return self.getTypedRuleContexts(RubyParser.CrlfContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.CrlfContext,i)
+                return self.getTypedRuleContext(RubyParser.CrlfContext,i)
 
 
         def statement_body(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.Statement_bodyContext)
+                return self.getTypedRuleContexts(RubyParser.Statement_bodyContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.Statement_bodyContext,i)
+                return self.getTypedRuleContext(RubyParser.Statement_bodyContext,i)
 
 
         def else_token(self):
-            return self.getTypedRuleContext(RubyLexerParser.Else_tokenContext,0)
+            return self.getTypedRuleContext(RubyParser.Else_tokenContext,0)
 
 
         def if_elsif_statement(self):
-            return self.getTypedRuleContext(RubyLexerParser.If_elsif_statementContext,0)
+            return self.getTypedRuleContext(RubyParser.If_elsif_statementContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_if_elsif_statement
+            return RubyParser.RULE_if_elsif_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterIf_elsif_statement" ):
@@ -2167,7 +2167,7 @@ class RubyLexerParser ( Parser ):
 
     def if_elsif_statement(self):
 
-        localctx = RubyLexerParser.If_elsif_statementContext(self, self._ctx, self.state)
+        localctx = RubyParser.If_elsif_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 48, self.RULE_if_elsif_statement)
         try:
             self.state = 293
@@ -2176,7 +2176,7 @@ class RubyLexerParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 274
-                self.match(RubyLexerParser.ELSIF)
+                self.match(RubyParser.ELSIF)
                 self.state = 275
                 self.cond_expression()
                 self.state = 276
@@ -2188,7 +2188,7 @@ class RubyLexerParser ( Parser ):
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 279
-                self.match(RubyLexerParser.ELSIF)
+                self.match(RubyParser.ELSIF)
                 self.state = 280
                 self.cond_expression()
                 self.state = 281
@@ -2206,7 +2206,7 @@ class RubyLexerParser ( Parser ):
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 287
-                self.match(RubyLexerParser.ELSIF)
+                self.match(RubyParser.ELSIF)
                 self.state = 288
                 self.cond_expression()
                 self.state = 289
@@ -2235,39 +2235,39 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def IF(self):
-            return self.getToken(RubyLexerParser.IF, 0)
+            return self.getToken(RubyParser.IF, 0)
 
         def cond_expression(self):
-            return self.getTypedRuleContext(RubyLexerParser.Cond_expressionContext,0)
+            return self.getTypedRuleContext(RubyParser.Cond_expressionContext,0)
 
 
         def crlf(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.CrlfContext)
+                return self.getTypedRuleContexts(RubyParser.CrlfContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.CrlfContext,i)
+                return self.getTypedRuleContext(RubyParser.CrlfContext,i)
 
 
         def statement_body(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.Statement_bodyContext)
+                return self.getTypedRuleContexts(RubyParser.Statement_bodyContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.Statement_bodyContext,i)
+                return self.getTypedRuleContext(RubyParser.Statement_bodyContext,i)
 
 
         def END(self):
-            return self.getToken(RubyLexerParser.END, 0)
+            return self.getToken(RubyParser.END, 0)
 
         def else_token(self):
-            return self.getTypedRuleContext(RubyLexerParser.Else_tokenContext,0)
+            return self.getTypedRuleContext(RubyParser.Else_tokenContext,0)
 
 
         def elsif_statement(self):
-            return self.getTypedRuleContext(RubyLexerParser.Elsif_statementContext,0)
+            return self.getTypedRuleContext(RubyParser.Elsif_statementContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_if_statement
+            return RubyParser.RULE_if_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterIf_statement" ):
@@ -2288,7 +2288,7 @@ class RubyLexerParser ( Parser ):
 
     def if_statement(self):
 
-        localctx = RubyLexerParser.If_statementContext(self, self._ctx, self.state)
+        localctx = RubyParser.If_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 50, self.RULE_if_statement)
         try:
             self.state = 317
@@ -2297,7 +2297,7 @@ class RubyLexerParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 295
-                self.match(RubyLexerParser.IF)
+                self.match(RubyParser.IF)
                 self.state = 296
                 self.cond_expression()
                 self.state = 297
@@ -2305,13 +2305,13 @@ class RubyLexerParser ( Parser ):
                 self.state = 298
                 self.statement_body()
                 self.state = 299
-                self.match(RubyLexerParser.END)
+                self.match(RubyParser.END)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 301
-                self.match(RubyLexerParser.IF)
+                self.match(RubyParser.IF)
                 self.state = 302
                 self.cond_expression()
                 self.state = 303
@@ -2325,13 +2325,13 @@ class RubyLexerParser ( Parser ):
                 self.state = 307
                 self.statement_body()
                 self.state = 308
-                self.match(RubyLexerParser.END)
+                self.match(RubyParser.END)
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 310
-                self.match(RubyLexerParser.IF)
+                self.match(RubyParser.IF)
                 self.state = 311
                 self.cond_expression()
                 self.state = 312
@@ -2341,7 +2341,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 314
                 self.elsif_statement()
                 self.state = 315
-                self.match(RubyLexerParser.END)
+                self.match(RubyParser.END)
                 pass
 
 
@@ -2362,39 +2362,39 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def UNLESS(self):
-            return self.getToken(RubyLexerParser.UNLESS, 0)
+            return self.getToken(RubyParser.UNLESS, 0)
 
         def cond_expression(self):
-            return self.getTypedRuleContext(RubyLexerParser.Cond_expressionContext,0)
+            return self.getTypedRuleContext(RubyParser.Cond_expressionContext,0)
 
 
         def crlf(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.CrlfContext)
+                return self.getTypedRuleContexts(RubyParser.CrlfContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.CrlfContext,i)
+                return self.getTypedRuleContext(RubyParser.CrlfContext,i)
 
 
         def statement_body(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.Statement_bodyContext)
+                return self.getTypedRuleContexts(RubyParser.Statement_bodyContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.Statement_bodyContext,i)
+                return self.getTypedRuleContext(RubyParser.Statement_bodyContext,i)
 
 
         def END(self):
-            return self.getToken(RubyLexerParser.END, 0)
+            return self.getToken(RubyParser.END, 0)
 
         def else_token(self):
-            return self.getTypedRuleContext(RubyLexerParser.Else_tokenContext,0)
+            return self.getTypedRuleContext(RubyParser.Else_tokenContext,0)
 
 
         def elsif_statement(self):
-            return self.getTypedRuleContext(RubyLexerParser.Elsif_statementContext,0)
+            return self.getTypedRuleContext(RubyParser.Elsif_statementContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_unless_statement
+            return RubyParser.RULE_unless_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterUnless_statement" ):
@@ -2415,7 +2415,7 @@ class RubyLexerParser ( Parser ):
 
     def unless_statement(self):
 
-        localctx = RubyLexerParser.Unless_statementContext(self, self._ctx, self.state)
+        localctx = RubyParser.Unless_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 52, self.RULE_unless_statement)
         try:
             self.state = 341
@@ -2424,7 +2424,7 @@ class RubyLexerParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 319
-                self.match(RubyLexerParser.UNLESS)
+                self.match(RubyParser.UNLESS)
                 self.state = 320
                 self.cond_expression()
                 self.state = 321
@@ -2432,13 +2432,13 @@ class RubyLexerParser ( Parser ):
                 self.state = 322
                 self.statement_body()
                 self.state = 323
-                self.match(RubyLexerParser.END)
+                self.match(RubyParser.END)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 325
-                self.match(RubyLexerParser.UNLESS)
+                self.match(RubyParser.UNLESS)
                 self.state = 326
                 self.cond_expression()
                 self.state = 327
@@ -2452,13 +2452,13 @@ class RubyLexerParser ( Parser ):
                 self.state = 331
                 self.statement_body()
                 self.state = 332
-                self.match(RubyLexerParser.END)
+                self.match(RubyParser.END)
                 pass
 
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 334
-                self.match(RubyLexerParser.UNLESS)
+                self.match(RubyParser.UNLESS)
                 self.state = 335
                 self.cond_expression()
                 self.state = 336
@@ -2468,7 +2468,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 338
                 self.elsif_statement()
                 self.state = 339
-                self.match(RubyLexerParser.END)
+                self.match(RubyParser.END)
                 pass
 
 
@@ -2489,25 +2489,25 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def WHILE(self):
-            return self.getToken(RubyLexerParser.WHILE, 0)
+            return self.getToken(RubyParser.WHILE, 0)
 
         def cond_expression(self):
-            return self.getTypedRuleContext(RubyLexerParser.Cond_expressionContext,0)
+            return self.getTypedRuleContext(RubyParser.Cond_expressionContext,0)
 
 
         def crlf(self):
-            return self.getTypedRuleContext(RubyLexerParser.CrlfContext,0)
+            return self.getTypedRuleContext(RubyParser.CrlfContext,0)
 
 
         def statement_body(self):
-            return self.getTypedRuleContext(RubyLexerParser.Statement_bodyContext,0)
+            return self.getTypedRuleContext(RubyParser.Statement_bodyContext,0)
 
 
         def END(self):
-            return self.getToken(RubyLexerParser.END, 0)
+            return self.getToken(RubyParser.END, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_while_statement
+            return RubyParser.RULE_while_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterWhile_statement" ):
@@ -2528,12 +2528,12 @@ class RubyLexerParser ( Parser ):
 
     def while_statement(self):
 
-        localctx = RubyLexerParser.While_statementContext(self, self._ctx, self.state)
+        localctx = RubyParser.While_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 54, self.RULE_while_statement)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 343
-            self.match(RubyLexerParser.WHILE)
+            self.match(RubyParser.WHILE)
             self.state = 344
             self.cond_expression()
             self.state = 345
@@ -2541,7 +2541,7 @@ class RubyLexerParser ( Parser ):
             self.state = 346
             self.statement_body()
             self.state = 347
-            self.match(RubyLexerParser.END)
+            self.match(RubyParser.END)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -2559,45 +2559,45 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def FOR(self):
-            return self.getToken(RubyLexerParser.FOR, 0)
+            return self.getToken(RubyParser.FOR, 0)
 
         def LEFT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.LEFT_RBRACKET, 0)
+            return self.getToken(RubyParser.LEFT_RBRACKET, 0)
 
         def init_expression(self):
-            return self.getTypedRuleContext(RubyLexerParser.Init_expressionContext,0)
+            return self.getTypedRuleContext(RubyParser.Init_expressionContext,0)
 
 
         def SEMICOLON(self, i:int=None):
             if i is None:
-                return self.getTokens(RubyLexerParser.SEMICOLON)
+                return self.getTokens(RubyParser.SEMICOLON)
             else:
-                return self.getToken(RubyLexerParser.SEMICOLON, i)
+                return self.getToken(RubyParser.SEMICOLON, i)
 
         def cond_expression(self):
-            return self.getTypedRuleContext(RubyLexerParser.Cond_expressionContext,0)
+            return self.getTypedRuleContext(RubyParser.Cond_expressionContext,0)
 
 
         def loop_expression(self):
-            return self.getTypedRuleContext(RubyLexerParser.Loop_expressionContext,0)
+            return self.getTypedRuleContext(RubyParser.Loop_expressionContext,0)
 
 
         def RIGHT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.RIGHT_RBRACKET, 0)
+            return self.getToken(RubyParser.RIGHT_RBRACKET, 0)
 
         def crlf(self):
-            return self.getTypedRuleContext(RubyLexerParser.CrlfContext,0)
+            return self.getTypedRuleContext(RubyParser.CrlfContext,0)
 
 
         def statement_body(self):
-            return self.getTypedRuleContext(RubyLexerParser.Statement_bodyContext,0)
+            return self.getTypedRuleContext(RubyParser.Statement_bodyContext,0)
 
 
         def END(self):
-            return self.getToken(RubyLexerParser.END, 0)
+            return self.getToken(RubyParser.END, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_for_statement
+            return RubyParser.RULE_for_statement
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFor_statement" ):
@@ -2618,7 +2618,7 @@ class RubyLexerParser ( Parser ):
 
     def for_statement(self):
 
-        localctx = RubyLexerParser.For_statementContext(self, self._ctx, self.state)
+        localctx = RubyParser.For_statementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 56, self.RULE_for_statement)
         try:
             self.state = 371
@@ -2627,41 +2627,41 @@ class RubyLexerParser ( Parser ):
             if la_ == 1:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 349
-                self.match(RubyLexerParser.FOR)
+                self.match(RubyParser.FOR)
                 self.state = 350
-                self.match(RubyLexerParser.LEFT_RBRACKET)
+                self.match(RubyParser.LEFT_RBRACKET)
                 self.state = 351
                 self.init_expression()
                 self.state = 352
-                self.match(RubyLexerParser.SEMICOLON)
+                self.match(RubyParser.SEMICOLON)
                 self.state = 353
                 self.cond_expression()
                 self.state = 354
-                self.match(RubyLexerParser.SEMICOLON)
+                self.match(RubyParser.SEMICOLON)
                 self.state = 355
                 self.loop_expression()
                 self.state = 356
-                self.match(RubyLexerParser.RIGHT_RBRACKET)
+                self.match(RubyParser.RIGHT_RBRACKET)
                 self.state = 357
                 self.crlf()
                 self.state = 358
                 self.statement_body()
                 self.state = 359
-                self.match(RubyLexerParser.END)
+                self.match(RubyParser.END)
                 pass
 
             elif la_ == 2:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 361
-                self.match(RubyLexerParser.FOR)
+                self.match(RubyParser.FOR)
                 self.state = 362
                 self.init_expression()
                 self.state = 363
-                self.match(RubyLexerParser.SEMICOLON)
+                self.match(RubyParser.SEMICOLON)
                 self.state = 364
                 self.cond_expression()
                 self.state = 365
-                self.match(RubyLexerParser.SEMICOLON)
+                self.match(RubyParser.SEMICOLON)
                 self.state = 366
                 self.loop_expression()
                 self.state = 367
@@ -2669,7 +2669,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 368
                 self.statement_body()
                 self.state = 369
-                self.match(RubyLexerParser.END)
+                self.match(RubyParser.END)
                 pass
 
 
@@ -2690,11 +2690,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def for_init_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.For_init_listContext,0)
+            return self.getTypedRuleContext(RubyParser.For_init_listContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_init_expression
+            return RubyParser.RULE_init_expression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInit_expression" ):
@@ -2715,7 +2715,7 @@ class RubyLexerParser ( Parser ):
 
     def init_expression(self):
 
-        localctx = RubyLexerParser.Init_expressionContext(self, self._ctx, self.state)
+        localctx = RubyParser.Init_expressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 58, self.RULE_init_expression)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -2738,23 +2738,23 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def int_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_assignmentContext,0)
 
 
         def float_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.Float_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.Float_assignmentContext,0)
 
 
         def string_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.String_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.String_assignmentContext,0)
 
 
         def dynamic_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.Dynamic_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.Dynamic_assignmentContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_all_assignment
+            return RubyParser.RULE_all_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAll_assignment" ):
@@ -2775,7 +2775,7 @@ class RubyLexerParser ( Parser ):
 
     def all_assignment(self):
 
-        localctx = RubyLexerParser.All_assignmentContext(self, self._ctx, self.state)
+        localctx = RubyParser.All_assignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 60, self.RULE_all_assignment)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -2820,18 +2820,18 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def all_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.All_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.All_assignmentContext,0)
 
 
         def for_init_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.For_init_listContext,0)
+            return self.getTypedRuleContext(RubyParser.For_init_listContext,0)
 
 
         def COMMA(self):
-            return self.getToken(RubyLexerParser.COMMA, 0)
+            return self.getToken(RubyParser.COMMA, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_for_init_list
+            return RubyParser.RULE_for_init_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFor_init_list" ):
@@ -2852,7 +2852,7 @@ class RubyLexerParser ( Parser ):
     def for_init_list(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.For_init_listContext(self, self._ctx, _parentState)
+        localctx = RubyParser.For_init_listContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 62
         self.enterRecursionRule(localctx, 62, self.RULE_for_init_list, _p)
@@ -2869,14 +2869,14 @@ class RubyLexerParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    localctx = RubyLexerParser.For_init_listContext(self, _parentctx, _parentState)
+                    localctx = RubyParser.For_init_listContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_for_init_list)
                     self.state = 384
                     if not self.precpred(self._ctx, 2):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
                     self.state = 385
-                    self.match(RubyLexerParser.COMMA)
+                    self.match(RubyParser.COMMA)
                     self.state = 386
                     self.all_assignment() 
                 self.state = 391
@@ -2900,11 +2900,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def comparison_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.Comparison_listContext,0)
+            return self.getTypedRuleContext(RubyParser.Comparison_listContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_cond_expression
+            return RubyParser.RULE_cond_expression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterCond_expression" ):
@@ -2925,7 +2925,7 @@ class RubyLexerParser ( Parser ):
 
     def cond_expression(self):
 
-        localctx = RubyLexerParser.Cond_expressionContext(self, self._ctx, self.state)
+        localctx = RubyParser.Cond_expressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 64, self.RULE_cond_expression)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -2948,11 +2948,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def for_loop_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.For_loop_listContext,0)
+            return self.getTypedRuleContext(RubyParser.For_loop_listContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_loop_expression
+            return RubyParser.RULE_loop_expression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLoop_expression" ):
@@ -2973,7 +2973,7 @@ class RubyLexerParser ( Parser ):
 
     def loop_expression(self):
 
-        localctx = RubyLexerParser.Loop_expressionContext(self, self._ctx, self.state)
+        localctx = RubyParser.Loop_expressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 66, self.RULE_loop_expression)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -2996,18 +2996,18 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def all_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.All_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.All_assignmentContext,0)
 
 
         def for_loop_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.For_loop_listContext,0)
+            return self.getTypedRuleContext(RubyParser.For_loop_listContext,0)
 
 
         def COMMA(self):
-            return self.getToken(RubyLexerParser.COMMA, 0)
+            return self.getToken(RubyParser.COMMA, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_for_loop_list
+            return RubyParser.RULE_for_loop_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFor_loop_list" ):
@@ -3028,7 +3028,7 @@ class RubyLexerParser ( Parser ):
     def for_loop_list(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.For_loop_listContext(self, self._ctx, _parentState)
+        localctx = RubyParser.For_loop_listContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 68
         self.enterRecursionRule(localctx, 68, self.RULE_for_loop_list, _p)
@@ -3045,14 +3045,14 @@ class RubyLexerParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    localctx = RubyLexerParser.For_loop_listContext(self, _parentctx, _parentState)
+                    localctx = RubyParser.For_loop_listContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_for_loop_list)
                     self.state = 399
                     if not self.precpred(self._ctx, 2):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
                     self.state = 400
-                    self.match(RubyLexerParser.COMMA)
+                    self.match(RubyParser.COMMA)
                     self.state = 401
                     self.all_assignment() 
                 self.state = 406
@@ -3076,11 +3076,11 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def statement_expression_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.Statement_expression_listContext,0)
+            return self.getTypedRuleContext(RubyParser.Statement_expression_listContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_statement_body
+            return RubyParser.RULE_statement_body
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterStatement_body" ):
@@ -3101,7 +3101,7 @@ class RubyLexerParser ( Parser ):
 
     def statement_body(self):
 
-        localctx = RubyLexerParser.Statement_bodyContext(self, self._ctx, self.state)
+        localctx = RubyParser.Statement_bodyContext(self, self._ctx, self.state)
         self.enterRule(localctx, 70, self.RULE_statement_body)
         try:
             self.enterOuterAlt(localctx, 1)
@@ -3124,26 +3124,26 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def expression(self):
-            return self.getTypedRuleContext(RubyLexerParser.ExpressionContext,0)
+            return self.getTypedRuleContext(RubyParser.ExpressionContext,0)
 
 
         def terminator(self):
-            return self.getTypedRuleContext(RubyLexerParser.TerminatorContext,0)
+            return self.getTypedRuleContext(RubyParser.TerminatorContext,0)
 
 
         def RETRY(self):
-            return self.getToken(RubyLexerParser.RETRY, 0)
+            return self.getToken(RubyParser.RETRY, 0)
 
         def break_expression(self):
-            return self.getTypedRuleContext(RubyLexerParser.Break_expressionContext,0)
+            return self.getTypedRuleContext(RubyParser.Break_expressionContext,0)
 
 
         def statement_expression_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.Statement_expression_listContext,0)
+            return self.getTypedRuleContext(RubyParser.Statement_expression_listContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_statement_expression_list
+            return RubyParser.RULE_statement_expression_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterStatement_expression_list" ):
@@ -3164,7 +3164,7 @@ class RubyLexerParser ( Parser ):
     def statement_expression_list(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.Statement_expression_listContext(self, self._ctx, _parentState)
+        localctx = RubyParser.Statement_expression_listContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 72
         self.enterRecursionRule(localctx, 72, self.RULE_statement_expression_list, _p)
@@ -3173,19 +3173,19 @@ class RubyLexerParser ( Parser ):
             self.state = 418
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [RubyLexerParser.DEF, RubyLexerParser.RETURN, RubyLexerParser.IF, RubyLexerParser.UNLESS, RubyLexerParser.WHILE, RubyLexerParser.FOR, RubyLexerParser.TRUE, RubyLexerParser.FALSE, RubyLexerParser.NOT, RubyLexerParser.LEFT_RBRACKET, RubyLexerParser.NIL, RubyLexerParser.INT, RubyLexerParser.FLOAT, RubyLexerParser.ID, RubyLexerParser.ID_GLOBAL]:
+            if token in [RubyParser.DEF, RubyParser.RETURN, RubyParser.IF, RubyParser.UNLESS, RubyParser.WHILE, RubyParser.FOR, RubyParser.TRUE, RubyParser.FALSE, RubyParser.NOT, RubyParser.LEFT_RBRACKET, RubyParser.NIL, RubyParser.INT, RubyParser.FLOAT, RubyParser.ID, RubyParser.ID_GLOBAL]:
                 self.state = 410
                 self.expression()
                 self.state = 411
                 self.terminator(0)
                 pass
-            elif token in [RubyLexerParser.RETRY]:
+            elif token in [RubyParser.RETRY]:
                 self.state = 413
-                self.match(RubyLexerParser.RETRY)
+                self.match(RubyParser.RETRY)
                 self.state = 414
                 self.terminator(0)
                 pass
-            elif token in [RubyLexerParser.BREAK]:
+            elif token in [RubyParser.BREAK]:
                 self.state = 415
                 self.break_expression()
                 self.state = 416
@@ -3207,7 +3207,7 @@ class RubyLexerParser ( Parser ):
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,20,self._ctx)
                     if la_ == 1:
-                        localctx = RubyLexerParser.Statement_expression_listContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Statement_expression_listContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_statement_expression_list)
                         self.state = 420
                         if not self.precpred(self._ctx, 3):
@@ -3220,20 +3220,20 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 2:
-                        localctx = RubyLexerParser.Statement_expression_listContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Statement_expression_listContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_statement_expression_list)
                         self.state = 424
                         if not self.precpred(self._ctx, 2):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
                         self.state = 425
-                        self.match(RubyLexerParser.RETRY)
+                        self.match(RubyParser.RETRY)
                         self.state = 426
                         self.terminator(0)
                         pass
 
                     elif la_ == 3:
-                        localctx = RubyLexerParser.Statement_expression_listContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Statement_expression_listContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_statement_expression_list)
                         self.state = 427
                         if not self.precpred(self._ctx, 1):
@@ -3269,36 +3269,36 @@ class RubyLexerParser ( Parser ):
             self.op = None # Token
 
         def rvalue(self):
-            return self.getTypedRuleContext(RubyLexerParser.RvalueContext,0)
+            return self.getTypedRuleContext(RubyParser.RvalueContext,0)
 
 
         def lvalue(self):
-            return self.getTypedRuleContext(RubyLexerParser.LvalueContext,0)
+            return self.getTypedRuleContext(RubyParser.LvalueContext,0)
 
 
         def ASSIGN(self):
-            return self.getToken(RubyLexerParser.ASSIGN, 0)
+            return self.getToken(RubyParser.ASSIGN, 0)
 
         def PLUS_ASSIGN(self):
-            return self.getToken(RubyLexerParser.PLUS_ASSIGN, 0)
+            return self.getToken(RubyParser.PLUS_ASSIGN, 0)
 
         def MINUS_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MINUS_ASSIGN, 0)
+            return self.getToken(RubyParser.MINUS_ASSIGN, 0)
 
         def MUL_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MUL_ASSIGN, 0)
+            return self.getToken(RubyParser.MUL_ASSIGN, 0)
 
         def DIV_ASSIGN(self):
-            return self.getToken(RubyLexerParser.DIV_ASSIGN, 0)
+            return self.getToken(RubyParser.DIV_ASSIGN, 0)
 
         def MOD_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MOD_ASSIGN, 0)
+            return self.getToken(RubyParser.MOD_ASSIGN, 0)
 
         def EXP_ASSIGN(self):
-            return self.getToken(RubyLexerParser.EXP_ASSIGN, 0)
+            return self.getToken(RubyParser.EXP_ASSIGN, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_assignment
+            return RubyParser.RULE_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterAssignment" ):
@@ -3319,7 +3319,7 @@ class RubyLexerParser ( Parser ):
 
     def assignment(self):
 
-        localctx = RubyLexerParser.AssignmentContext(self, self._ctx, self.state)
+        localctx = RubyParser.AssignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 74, self.RULE_assignment)
         self._la = 0 # Token type
         try:
@@ -3331,7 +3331,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 436
                 localctx.var_id = self.lvalue()
                 self.state = 437
-                localctx.op = self.match(RubyLexerParser.ASSIGN)
+                localctx.op = self.match(RubyParser.ASSIGN)
                 self.state = 438
                 self.rvalue(0)
                 pass
@@ -3343,7 +3343,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 441
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.PLUS_ASSIGN) | (1 << RubyLexerParser.MINUS_ASSIGN) | (1 << RubyLexerParser.MUL_ASSIGN) | (1 << RubyLexerParser.DIV_ASSIGN) | (1 << RubyLexerParser.MOD_ASSIGN) | (1 << RubyLexerParser.EXP_ASSIGN))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.PLUS_ASSIGN) | (1 << RubyParser.MINUS_ASSIGN) | (1 << RubyParser.MUL_ASSIGN) | (1 << RubyParser.DIV_ASSIGN) | (1 << RubyParser.MOD_ASSIGN) | (1 << RubyParser.EXP_ASSIGN))) != 0)):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -3372,36 +3372,36 @@ class RubyLexerParser ( Parser ):
             self.op = None # Token
 
         def dynamic_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Dynamic_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Dynamic_resultContext,0)
 
 
         def lvalue(self):
-            return self.getTypedRuleContext(RubyLexerParser.LvalueContext,0)
+            return self.getTypedRuleContext(RubyParser.LvalueContext,0)
 
 
         def ASSIGN(self):
-            return self.getToken(RubyLexerParser.ASSIGN, 0)
+            return self.getToken(RubyParser.ASSIGN, 0)
 
         def PLUS_ASSIGN(self):
-            return self.getToken(RubyLexerParser.PLUS_ASSIGN, 0)
+            return self.getToken(RubyParser.PLUS_ASSIGN, 0)
 
         def MINUS_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MINUS_ASSIGN, 0)
+            return self.getToken(RubyParser.MINUS_ASSIGN, 0)
 
         def MUL_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MUL_ASSIGN, 0)
+            return self.getToken(RubyParser.MUL_ASSIGN, 0)
 
         def DIV_ASSIGN(self):
-            return self.getToken(RubyLexerParser.DIV_ASSIGN, 0)
+            return self.getToken(RubyParser.DIV_ASSIGN, 0)
 
         def MOD_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MOD_ASSIGN, 0)
+            return self.getToken(RubyParser.MOD_ASSIGN, 0)
 
         def EXP_ASSIGN(self):
-            return self.getToken(RubyLexerParser.EXP_ASSIGN, 0)
+            return self.getToken(RubyParser.EXP_ASSIGN, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_dynamic_assignment
+            return RubyParser.RULE_dynamic_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterDynamic_assignment" ):
@@ -3422,7 +3422,7 @@ class RubyLexerParser ( Parser ):
 
     def dynamic_assignment(self):
 
-        localctx = RubyLexerParser.Dynamic_assignmentContext(self, self._ctx, self.state)
+        localctx = RubyParser.Dynamic_assignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 76, self.RULE_dynamic_assignment)
         self._la = 0 # Token type
         try:
@@ -3434,7 +3434,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 446
                 localctx.var_id = self.lvalue()
                 self.state = 447
-                localctx.op = self.match(RubyLexerParser.ASSIGN)
+                localctx.op = self.match(RubyParser.ASSIGN)
                 self.state = 448
                 self.dynamic_result(0)
                 pass
@@ -3446,7 +3446,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 451
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.PLUS_ASSIGN) | (1 << RubyLexerParser.MINUS_ASSIGN) | (1 << RubyLexerParser.MUL_ASSIGN) | (1 << RubyLexerParser.DIV_ASSIGN) | (1 << RubyLexerParser.MOD_ASSIGN) | (1 << RubyLexerParser.EXP_ASSIGN))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.PLUS_ASSIGN) | (1 << RubyParser.MINUS_ASSIGN) | (1 << RubyParser.MUL_ASSIGN) | (1 << RubyParser.DIV_ASSIGN) | (1 << RubyParser.MOD_ASSIGN) | (1 << RubyParser.EXP_ASSIGN))) != 0)):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -3475,36 +3475,36 @@ class RubyLexerParser ( Parser ):
             self.op = None # Token
 
         def int_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_resultContext,0)
 
 
         def lvalue(self):
-            return self.getTypedRuleContext(RubyLexerParser.LvalueContext,0)
+            return self.getTypedRuleContext(RubyParser.LvalueContext,0)
 
 
         def ASSIGN(self):
-            return self.getToken(RubyLexerParser.ASSIGN, 0)
+            return self.getToken(RubyParser.ASSIGN, 0)
 
         def PLUS_ASSIGN(self):
-            return self.getToken(RubyLexerParser.PLUS_ASSIGN, 0)
+            return self.getToken(RubyParser.PLUS_ASSIGN, 0)
 
         def MINUS_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MINUS_ASSIGN, 0)
+            return self.getToken(RubyParser.MINUS_ASSIGN, 0)
 
         def MUL_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MUL_ASSIGN, 0)
+            return self.getToken(RubyParser.MUL_ASSIGN, 0)
 
         def DIV_ASSIGN(self):
-            return self.getToken(RubyLexerParser.DIV_ASSIGN, 0)
+            return self.getToken(RubyParser.DIV_ASSIGN, 0)
 
         def MOD_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MOD_ASSIGN, 0)
+            return self.getToken(RubyParser.MOD_ASSIGN, 0)
 
         def EXP_ASSIGN(self):
-            return self.getToken(RubyLexerParser.EXP_ASSIGN, 0)
+            return self.getToken(RubyParser.EXP_ASSIGN, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_int_assignment
+            return RubyParser.RULE_int_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInt_assignment" ):
@@ -3525,7 +3525,7 @@ class RubyLexerParser ( Parser ):
 
     def int_assignment(self):
 
-        localctx = RubyLexerParser.Int_assignmentContext(self, self._ctx, self.state)
+        localctx = RubyParser.Int_assignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 78, self.RULE_int_assignment)
         self._la = 0 # Token type
         try:
@@ -3537,7 +3537,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 456
                 localctx.var_id = self.lvalue()
                 self.state = 457
-                localctx.op = self.match(RubyLexerParser.ASSIGN)
+                localctx.op = self.match(RubyParser.ASSIGN)
                 self.state = 458
                 self.int_result(0)
                 pass
@@ -3549,7 +3549,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 461
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.PLUS_ASSIGN) | (1 << RubyLexerParser.MINUS_ASSIGN) | (1 << RubyLexerParser.MUL_ASSIGN) | (1 << RubyLexerParser.DIV_ASSIGN) | (1 << RubyLexerParser.MOD_ASSIGN) | (1 << RubyLexerParser.EXP_ASSIGN))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.PLUS_ASSIGN) | (1 << RubyParser.MINUS_ASSIGN) | (1 << RubyParser.MUL_ASSIGN) | (1 << RubyParser.DIV_ASSIGN) | (1 << RubyParser.MOD_ASSIGN) | (1 << RubyParser.EXP_ASSIGN))) != 0)):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -3578,36 +3578,36 @@ class RubyLexerParser ( Parser ):
             self.op = None # Token
 
         def float_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Float_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Float_resultContext,0)
 
 
         def lvalue(self):
-            return self.getTypedRuleContext(RubyLexerParser.LvalueContext,0)
+            return self.getTypedRuleContext(RubyParser.LvalueContext,0)
 
 
         def ASSIGN(self):
-            return self.getToken(RubyLexerParser.ASSIGN, 0)
+            return self.getToken(RubyParser.ASSIGN, 0)
 
         def PLUS_ASSIGN(self):
-            return self.getToken(RubyLexerParser.PLUS_ASSIGN, 0)
+            return self.getToken(RubyParser.PLUS_ASSIGN, 0)
 
         def MINUS_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MINUS_ASSIGN, 0)
+            return self.getToken(RubyParser.MINUS_ASSIGN, 0)
 
         def MUL_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MUL_ASSIGN, 0)
+            return self.getToken(RubyParser.MUL_ASSIGN, 0)
 
         def DIV_ASSIGN(self):
-            return self.getToken(RubyLexerParser.DIV_ASSIGN, 0)
+            return self.getToken(RubyParser.DIV_ASSIGN, 0)
 
         def MOD_ASSIGN(self):
-            return self.getToken(RubyLexerParser.MOD_ASSIGN, 0)
+            return self.getToken(RubyParser.MOD_ASSIGN, 0)
 
         def EXP_ASSIGN(self):
-            return self.getToken(RubyLexerParser.EXP_ASSIGN, 0)
+            return self.getToken(RubyParser.EXP_ASSIGN, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_float_assignment
+            return RubyParser.RULE_float_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFloat_assignment" ):
@@ -3628,7 +3628,7 @@ class RubyLexerParser ( Parser ):
 
     def float_assignment(self):
 
-        localctx = RubyLexerParser.Float_assignmentContext(self, self._ctx, self.state)
+        localctx = RubyParser.Float_assignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 80, self.RULE_float_assignment)
         self._la = 0 # Token type
         try:
@@ -3640,7 +3640,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 466
                 localctx.var_id = self.lvalue()
                 self.state = 467
-                localctx.op = self.match(RubyLexerParser.ASSIGN)
+                localctx.op = self.match(RubyParser.ASSIGN)
                 self.state = 468
                 self.float_result(0)
                 pass
@@ -3652,7 +3652,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 471
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.PLUS_ASSIGN) | (1 << RubyLexerParser.MINUS_ASSIGN) | (1 << RubyLexerParser.MUL_ASSIGN) | (1 << RubyLexerParser.DIV_ASSIGN) | (1 << RubyLexerParser.MOD_ASSIGN) | (1 << RubyLexerParser.EXP_ASSIGN))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.PLUS_ASSIGN) | (1 << RubyParser.MINUS_ASSIGN) | (1 << RubyParser.MUL_ASSIGN) | (1 << RubyParser.DIV_ASSIGN) | (1 << RubyParser.MOD_ASSIGN) | (1 << RubyParser.EXP_ASSIGN))) != 0)):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -3681,21 +3681,21 @@ class RubyLexerParser ( Parser ):
             self.op = None # Token
 
         def string_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.String_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.String_resultContext,0)
 
 
         def lvalue(self):
-            return self.getTypedRuleContext(RubyLexerParser.LvalueContext,0)
+            return self.getTypedRuleContext(RubyParser.LvalueContext,0)
 
 
         def ASSIGN(self):
-            return self.getToken(RubyLexerParser.ASSIGN, 0)
+            return self.getToken(RubyParser.ASSIGN, 0)
 
         def PLUS_ASSIGN(self):
-            return self.getToken(RubyLexerParser.PLUS_ASSIGN, 0)
+            return self.getToken(RubyParser.PLUS_ASSIGN, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_string_assignment
+            return RubyParser.RULE_string_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterString_assignment" ):
@@ -3716,7 +3716,7 @@ class RubyLexerParser ( Parser ):
 
     def string_assignment(self):
 
-        localctx = RubyLexerParser.String_assignmentContext(self, self._ctx, self.state)
+        localctx = RubyParser.String_assignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 82, self.RULE_string_assignment)
         try:
             self.state = 484
@@ -3727,7 +3727,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 476
                 localctx.var_id = self.lvalue()
                 self.state = 477
-                localctx.op = self.match(RubyLexerParser.ASSIGN)
+                localctx.op = self.match(RubyParser.ASSIGN)
                 self.state = 478
                 self.string_result(0)
                 pass
@@ -3737,7 +3737,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 480
                 localctx.var_id = self.lvalue()
                 self.state = 481
-                localctx.op = self.match(RubyLexerParser.PLUS_ASSIGN)
+                localctx.op = self.match(RubyParser.PLUS_ASSIGN)
                 self.state = 482
                 self.string_result(0)
                 pass
@@ -3762,20 +3762,20 @@ class RubyLexerParser ( Parser ):
             self.op = None # Token
 
         def LEFT_SBRACKET(self):
-            return self.getToken(RubyLexerParser.LEFT_SBRACKET, 0)
+            return self.getToken(RubyParser.LEFT_SBRACKET, 0)
 
         def RIGHT_SBRACKET(self):
-            return self.getToken(RubyLexerParser.RIGHT_SBRACKET, 0)
+            return self.getToken(RubyParser.RIGHT_SBRACKET, 0)
 
         def lvalue(self):
-            return self.getTypedRuleContext(RubyLexerParser.LvalueContext,0)
+            return self.getTypedRuleContext(RubyParser.LvalueContext,0)
 
 
         def ASSIGN(self):
-            return self.getToken(RubyLexerParser.ASSIGN, 0)
+            return self.getToken(RubyParser.ASSIGN, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_initial_array_assignment
+            return RubyParser.RULE_initial_array_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInitial_array_assignment" ):
@@ -3796,18 +3796,18 @@ class RubyLexerParser ( Parser ):
 
     def initial_array_assignment(self):
 
-        localctx = RubyLexerParser.Initial_array_assignmentContext(self, self._ctx, self.state)
+        localctx = RubyParser.Initial_array_assignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 84, self.RULE_initial_array_assignment)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 486
             localctx.var_id = self.lvalue()
             self.state = 487
-            localctx.op = self.match(RubyLexerParser.ASSIGN)
+            localctx.op = self.match(RubyParser.ASSIGN)
             self.state = 488
-            self.match(RubyLexerParser.LEFT_SBRACKET)
+            self.match(RubyParser.LEFT_SBRACKET)
             self.state = 489
-            self.match(RubyLexerParser.RIGHT_SBRACKET)
+            self.match(RubyParser.RIGHT_SBRACKET)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3828,18 +3828,18 @@ class RubyLexerParser ( Parser ):
             self.arr_val = None # All_resultContext
 
         def array_selector(self):
-            return self.getTypedRuleContext(RubyLexerParser.Array_selectorContext,0)
+            return self.getTypedRuleContext(RubyParser.Array_selectorContext,0)
 
 
         def ASSIGN(self):
-            return self.getToken(RubyLexerParser.ASSIGN, 0)
+            return self.getToken(RubyParser.ASSIGN, 0)
 
         def all_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.All_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.All_resultContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_array_assignment
+            return RubyParser.RULE_array_assignment
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArray_assignment" ):
@@ -3860,14 +3860,14 @@ class RubyLexerParser ( Parser ):
 
     def array_assignment(self):
 
-        localctx = RubyLexerParser.Array_assignmentContext(self, self._ctx, self.state)
+        localctx = RubyParser.Array_assignmentContext(self, self._ctx, self.state)
         self.enterRule(localctx, 86, self.RULE_array_assignment)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 491
             localctx.arr_def = self.array_selector()
             self.state = 492
-            localctx.op = self.match(RubyLexerParser.ASSIGN)
+            localctx.op = self.match(RubyParser.ASSIGN)
             self.state = 493
             localctx.arr_val = self.all_result()
         except RecognitionException as re:
@@ -3887,17 +3887,17 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def LEFT_SBRACKET(self):
-            return self.getToken(RubyLexerParser.LEFT_SBRACKET, 0)
+            return self.getToken(RubyParser.LEFT_SBRACKET, 0)
 
         def array_definition_elements(self):
-            return self.getTypedRuleContext(RubyLexerParser.Array_definition_elementsContext,0)
+            return self.getTypedRuleContext(RubyParser.Array_definition_elementsContext,0)
 
 
         def RIGHT_SBRACKET(self):
-            return self.getToken(RubyLexerParser.RIGHT_SBRACKET, 0)
+            return self.getToken(RubyParser.RIGHT_SBRACKET, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_array_definition
+            return RubyParser.RULE_array_definition
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArray_definition" ):
@@ -3918,16 +3918,16 @@ class RubyLexerParser ( Parser ):
 
     def array_definition(self):
 
-        localctx = RubyLexerParser.Array_definitionContext(self, self._ctx, self.state)
+        localctx = RubyParser.Array_definitionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 88, self.RULE_array_definition)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 495
-            self.match(RubyLexerParser.LEFT_SBRACKET)
+            self.match(RubyParser.LEFT_SBRACKET)
             self.state = 496
             self.array_definition_elements(0)
             self.state = 497
-            self.match(RubyLexerParser.RIGHT_SBRACKET)
+            self.match(RubyParser.RIGHT_SBRACKET)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -3945,22 +3945,22 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def int_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_resultContext,0)
 
 
         def dynamic_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Dynamic_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Dynamic_resultContext,0)
 
 
         def array_definition_elements(self):
-            return self.getTypedRuleContext(RubyLexerParser.Array_definition_elementsContext,0)
+            return self.getTypedRuleContext(RubyParser.Array_definition_elementsContext,0)
 
 
         def COMMA(self):
-            return self.getToken(RubyLexerParser.COMMA, 0)
+            return self.getToken(RubyParser.COMMA, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_array_definition_elements
+            return RubyParser.RULE_array_definition_elements
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArray_definition_elements" ):
@@ -3981,7 +3981,7 @@ class RubyLexerParser ( Parser ):
     def array_definition_elements(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.Array_definition_elementsContext(self, self._ctx, _parentState)
+        localctx = RubyParser.Array_definition_elementsContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 90
         self.enterRecursionRule(localctx, 90, self.RULE_array_definition_elements, _p)
@@ -4010,14 +4010,14 @@ class RubyLexerParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    localctx = RubyLexerParser.Array_definition_elementsContext(self, _parentctx, _parentState)
+                    localctx = RubyParser.Array_definition_elementsContext(self, _parentctx, _parentState)
                     self.pushNewRecursionContext(localctx, _startState, self.RULE_array_definition_elements)
                     self.state = 504
                     if not self.precpred(self._ctx, 1):
                         from antlr4.error.Errors import FailedPredicateException
                         raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                     self.state = 505
-                    self.match(RubyLexerParser.COMMA)
+                    self.match(RubyParser.COMMA)
                     self.state = 508
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,28,self._ctx)
@@ -4053,29 +4053,29 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def id_(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_Context,0)
+            return self.getTypedRuleContext(RubyParser.Id_Context,0)
 
 
         def LEFT_SBRACKET(self):
-            return self.getToken(RubyLexerParser.LEFT_SBRACKET, 0)
+            return self.getToken(RubyParser.LEFT_SBRACKET, 0)
 
         def RIGHT_SBRACKET(self):
-            return self.getToken(RubyLexerParser.RIGHT_SBRACKET, 0)
+            return self.getToken(RubyParser.RIGHT_SBRACKET, 0)
 
         def int_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_resultContext,0)
 
 
         def dynamic_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Dynamic_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Dynamic_resultContext,0)
 
 
         def id_global(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_globalContext,0)
+            return self.getTypedRuleContext(RubyParser.Id_globalContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_array_selector
+            return RubyParser.RULE_array_selector
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterArray_selector" ):
@@ -4096,18 +4096,18 @@ class RubyLexerParser ( Parser ):
 
     def array_selector(self):
 
-        localctx = RubyLexerParser.Array_selectorContext(self, self._ctx, self.state)
+        localctx = RubyParser.Array_selectorContext(self, self._ctx, self.state)
         self.enterRule(localctx, 92, self.RULE_array_selector)
         try:
             self.state = 531
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [RubyLexerParser.ID]:
+            if token in [RubyParser.ID]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 515
                 self.id_()
                 self.state = 516
-                self.match(RubyLexerParser.LEFT_SBRACKET)
+                self.match(RubyParser.LEFT_SBRACKET)
                 self.state = 519
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,30,self._ctx)
@@ -4123,14 +4123,14 @@ class RubyLexerParser ( Parser ):
 
 
                 self.state = 521
-                self.match(RubyLexerParser.RIGHT_SBRACKET)
+                self.match(RubyParser.RIGHT_SBRACKET)
                 pass
-            elif token in [RubyLexerParser.ID_GLOBAL]:
+            elif token in [RubyParser.ID_GLOBAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 523
                 self.id_global()
                 self.state = 524
-                self.match(RubyLexerParser.LEFT_SBRACKET)
+                self.match(RubyParser.LEFT_SBRACKET)
                 self.state = 527
                 self._errHandler.sync(self)
                 la_ = self._interp.adaptivePredict(self._input,31,self._ctx)
@@ -4146,7 +4146,7 @@ class RubyLexerParser ( Parser ):
 
 
                 self.state = 529
-                self.match(RubyLexerParser.RIGHT_SBRACKET)
+                self.match(RubyParser.RIGHT_SBRACKET)
                 pass
             else:
                 raise NoViableAltException(self)
@@ -4169,51 +4169,51 @@ class RubyLexerParser ( Parser ):
             self.op = None # Token
 
         def int_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_resultContext,0)
 
 
         def dynamic_result(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.Dynamic_resultContext)
+                return self.getTypedRuleContexts(RubyParser.Dynamic_resultContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.Dynamic_resultContext,i)
+                return self.getTypedRuleContext(RubyParser.Dynamic_resultContext,i)
 
 
         def MUL(self):
-            return self.getToken(RubyLexerParser.MUL, 0)
+            return self.getToken(RubyParser.MUL, 0)
 
         def DIV(self):
-            return self.getToken(RubyLexerParser.DIV, 0)
+            return self.getToken(RubyParser.DIV, 0)
 
         def MOD(self):
-            return self.getToken(RubyLexerParser.MOD, 0)
+            return self.getToken(RubyParser.MOD, 0)
 
         def float_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Float_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Float_resultContext,0)
 
 
         def string_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.String_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.String_resultContext,0)
 
 
         def PLUS(self):
-            return self.getToken(RubyLexerParser.PLUS, 0)
+            return self.getToken(RubyParser.PLUS, 0)
 
         def MINUS(self):
-            return self.getToken(RubyLexerParser.MINUS, 0)
+            return self.getToken(RubyParser.MINUS, 0)
 
         def LEFT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.LEFT_RBRACKET, 0)
+            return self.getToken(RubyParser.LEFT_RBRACKET, 0)
 
         def RIGHT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.RIGHT_RBRACKET, 0)
+            return self.getToken(RubyParser.RIGHT_RBRACKET, 0)
 
         def dynamic_(self):
-            return self.getTypedRuleContext(RubyLexerParser.Dynamic_Context,0)
+            return self.getTypedRuleContext(RubyParser.Dynamic_Context,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_dynamic_result
+            return RubyParser.RULE_dynamic_result
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterDynamic_result" ):
@@ -4234,7 +4234,7 @@ class RubyLexerParser ( Parser ):
     def dynamic_result(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.Dynamic_resultContext(self, self._ctx, _parentState)
+        localctx = RubyParser.Dynamic_resultContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 94
         self.enterRecursionRule(localctx, 94, self.RULE_dynamic_result, _p)
@@ -4250,7 +4250,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 535
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.MUL) | (1 << RubyLexerParser.DIV) | (1 << RubyLexerParser.MOD))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.MUL) | (1 << RubyParser.DIV) | (1 << RubyParser.MOD))) != 0)):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -4265,7 +4265,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 539
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.MUL) | (1 << RubyLexerParser.DIV) | (1 << RubyLexerParser.MOD))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.MUL) | (1 << RubyParser.DIV) | (1 << RubyParser.MOD))) != 0)):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -4278,7 +4278,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 542
                 self.string_result(0)
                 self.state = 543
-                localctx.op = self.match(RubyLexerParser.MUL)
+                localctx.op = self.match(RubyParser.MUL)
                 self.state = 544
                 self.dynamic_result(8)
                 pass
@@ -4289,7 +4289,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 547
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not(_la==RubyLexerParser.PLUS or _la==RubyLexerParser.MINUS):
+                if not(_la==RubyParser.PLUS or _la==RubyParser.MINUS):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -4304,7 +4304,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 551
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not(_la==RubyLexerParser.PLUS or _la==RubyLexerParser.MINUS):
+                if not(_la==RubyParser.PLUS or _la==RubyParser.MINUS):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -4315,11 +4315,11 @@ class RubyLexerParser ( Parser ):
 
             elif la_ == 6:
                 self.state = 554
-                self.match(RubyLexerParser.LEFT_RBRACKET)
+                self.match(RubyParser.LEFT_RBRACKET)
                 self.state = 555
                 self.dynamic_result(0)
                 self.state = 556
-                self.match(RubyLexerParser.RIGHT_RBRACKET)
+                self.match(RubyParser.RIGHT_RBRACKET)
                 pass
 
             elif la_ == 7:
@@ -4341,7 +4341,7 @@ class RubyLexerParser ( Parser ):
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,34,self._ctx)
                     if la_ == 1:
-                        localctx = RubyLexerParser.Dynamic_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Dynamic_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_dynamic_result)
                         self.state = 561
                         if not self.precpred(self._ctx, 10):
@@ -4350,7 +4350,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 562
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.MUL) | (1 << RubyLexerParser.DIV) | (1 << RubyLexerParser.MOD))) != 0)):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.MUL) | (1 << RubyParser.DIV) | (1 << RubyParser.MOD))) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4360,7 +4360,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 2:
-                        localctx = RubyLexerParser.Dynamic_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Dynamic_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_dynamic_result)
                         self.state = 564
                         if not self.precpred(self._ctx, 3):
@@ -4369,7 +4369,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 565
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==RubyLexerParser.PLUS or _la==RubyLexerParser.MINUS):
+                        if not(_la==RubyParser.PLUS or _la==RubyParser.MINUS):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4379,7 +4379,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 3:
-                        localctx = RubyLexerParser.Dynamic_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Dynamic_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_dynamic_result)
                         self.state = 567
                         if not self.precpred(self._ctx, 14):
@@ -4388,7 +4388,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 568
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.MUL) | (1 << RubyLexerParser.DIV) | (1 << RubyLexerParser.MOD))) != 0)):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.MUL) | (1 << RubyParser.DIV) | (1 << RubyParser.MOD))) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4398,7 +4398,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 4:
-                        localctx = RubyLexerParser.Dynamic_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Dynamic_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_dynamic_result)
                         self.state = 570
                         if not self.precpred(self._ctx, 12):
@@ -4407,7 +4407,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 571
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.MUL) | (1 << RubyLexerParser.DIV) | (1 << RubyLexerParser.MOD))) != 0)):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.MUL) | (1 << RubyParser.DIV) | (1 << RubyParser.MOD))) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4417,20 +4417,20 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 5:
-                        localctx = RubyLexerParser.Dynamic_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Dynamic_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_dynamic_result)
                         self.state = 573
                         if not self.precpred(self._ctx, 9):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
                         self.state = 574
-                        localctx.op = self.match(RubyLexerParser.MUL)
+                        localctx.op = self.match(RubyParser.MUL)
                         self.state = 575
                         self.string_result(0)
                         pass
 
                     elif la_ == 6:
-                        localctx = RubyLexerParser.Dynamic_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Dynamic_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_dynamic_result)
                         self.state = 576
                         if not self.precpred(self._ctx, 7):
@@ -4439,7 +4439,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 577
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==RubyLexerParser.PLUS or _la==RubyLexerParser.MINUS):
+                        if not(_la==RubyParser.PLUS or _la==RubyParser.MINUS):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4449,7 +4449,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 7:
-                        localctx = RubyLexerParser.Dynamic_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Dynamic_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_dynamic_result)
                         self.state = 579
                         if not self.precpred(self._ctx, 5):
@@ -4458,7 +4458,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 580
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==RubyLexerParser.PLUS or _la==RubyLexerParser.MINUS):
+                        if not(_la==RubyParser.PLUS or _la==RubyParser.MINUS):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4489,19 +4489,19 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def id_(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_Context,0)
+            return self.getTypedRuleContext(RubyParser.Id_Context,0)
 
 
         def function_call_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_call_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_call_assignmentContext,0)
 
 
         def array_selector(self):
-            return self.getTypedRuleContext(RubyLexerParser.Array_selectorContext,0)
+            return self.getTypedRuleContext(RubyParser.Array_selectorContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_dynamic_
+            return RubyParser.RULE_dynamic_
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterDynamic_" ):
@@ -4522,7 +4522,7 @@ class RubyLexerParser ( Parser ):
 
     def dynamic_(self):
 
-        localctx = RubyLexerParser.Dynamic_Context(self, self._ctx, self.state)
+        localctx = RubyParser.Dynamic_Context(self, self._ctx, self.state)
         self.enterRule(localctx, 96, self.RULE_dynamic_)
         try:
             self.state = 590
@@ -4565,39 +4565,39 @@ class RubyLexerParser ( Parser ):
             self.op = None # Token
 
         def LEFT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.LEFT_RBRACKET, 0)
+            return self.getToken(RubyParser.LEFT_RBRACKET, 0)
 
         def int_result(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.Int_resultContext)
+                return self.getTypedRuleContexts(RubyParser.Int_resultContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.Int_resultContext,i)
+                return self.getTypedRuleContext(RubyParser.Int_resultContext,i)
 
 
         def RIGHT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.RIGHT_RBRACKET, 0)
+            return self.getToken(RubyParser.RIGHT_RBRACKET, 0)
 
         def int_t(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_tContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_tContext,0)
 
 
         def MUL(self):
-            return self.getToken(RubyLexerParser.MUL, 0)
+            return self.getToken(RubyParser.MUL, 0)
 
         def DIV(self):
-            return self.getToken(RubyLexerParser.DIV, 0)
+            return self.getToken(RubyParser.DIV, 0)
 
         def MOD(self):
-            return self.getToken(RubyLexerParser.MOD, 0)
+            return self.getToken(RubyParser.MOD, 0)
 
         def PLUS(self):
-            return self.getToken(RubyLexerParser.PLUS, 0)
+            return self.getToken(RubyParser.PLUS, 0)
 
         def MINUS(self):
-            return self.getToken(RubyLexerParser.MINUS, 0)
+            return self.getToken(RubyParser.MINUS, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_int_result
+            return RubyParser.RULE_int_result
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInt_result" ):
@@ -4618,7 +4618,7 @@ class RubyLexerParser ( Parser ):
     def int_result(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.Int_resultContext(self, self._ctx, _parentState)
+        localctx = RubyParser.Int_resultContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 98
         self.enterRecursionRule(localctx, 98, self.RULE_int_result, _p)
@@ -4628,15 +4628,15 @@ class RubyLexerParser ( Parser ):
             self.state = 598
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [RubyLexerParser.LEFT_RBRACKET]:
+            if token in [RubyParser.LEFT_RBRACKET]:
                 self.state = 593
-                self.match(RubyLexerParser.LEFT_RBRACKET)
+                self.match(RubyParser.LEFT_RBRACKET)
                 self.state = 594
                 self.int_result(0)
                 self.state = 595
-                self.match(RubyLexerParser.RIGHT_RBRACKET)
+                self.match(RubyParser.RIGHT_RBRACKET)
                 pass
-            elif token in [RubyLexerParser.INT]:
+            elif token in [RubyParser.INT]:
                 self.state = 597
                 self.int_t()
                 pass
@@ -4656,7 +4656,7 @@ class RubyLexerParser ( Parser ):
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,38,self._ctx)
                     if la_ == 1:
-                        localctx = RubyLexerParser.Int_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Int_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_int_result)
                         self.state = 600
                         if not self.precpred(self._ctx, 4):
@@ -4665,7 +4665,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 601
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.MUL) | (1 << RubyLexerParser.DIV) | (1 << RubyLexerParser.MOD))) != 0)):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.MUL) | (1 << RubyParser.DIV) | (1 << RubyParser.MOD))) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4675,7 +4675,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 2:
-                        localctx = RubyLexerParser.Int_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Int_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_int_result)
                         self.state = 603
                         if not self.precpred(self._ctx, 3):
@@ -4684,7 +4684,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 604
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==RubyLexerParser.PLUS or _la==RubyLexerParser.MINUS):
+                        if not(_la==RubyParser.PLUS or _la==RubyParser.MINUS):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4716,43 +4716,43 @@ class RubyLexerParser ( Parser ):
             self.op = None # Token
 
         def int_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_resultContext,0)
 
 
         def float_result(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.Float_resultContext)
+                return self.getTypedRuleContexts(RubyParser.Float_resultContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.Float_resultContext,i)
+                return self.getTypedRuleContext(RubyParser.Float_resultContext,i)
 
 
         def MUL(self):
-            return self.getToken(RubyLexerParser.MUL, 0)
+            return self.getToken(RubyParser.MUL, 0)
 
         def DIV(self):
-            return self.getToken(RubyLexerParser.DIV, 0)
+            return self.getToken(RubyParser.DIV, 0)
 
         def MOD(self):
-            return self.getToken(RubyLexerParser.MOD, 0)
+            return self.getToken(RubyParser.MOD, 0)
 
         def PLUS(self):
-            return self.getToken(RubyLexerParser.PLUS, 0)
+            return self.getToken(RubyParser.PLUS, 0)
 
         def MINUS(self):
-            return self.getToken(RubyLexerParser.MINUS, 0)
+            return self.getToken(RubyParser.MINUS, 0)
 
         def LEFT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.LEFT_RBRACKET, 0)
+            return self.getToken(RubyParser.LEFT_RBRACKET, 0)
 
         def RIGHT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.RIGHT_RBRACKET, 0)
+            return self.getToken(RubyParser.RIGHT_RBRACKET, 0)
 
         def float_t(self):
-            return self.getTypedRuleContext(RubyLexerParser.Float_tContext,0)
+            return self.getTypedRuleContext(RubyParser.Float_tContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_float_result
+            return RubyParser.RULE_float_result
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFloat_result" ):
@@ -4773,7 +4773,7 @@ class RubyLexerParser ( Parser ):
     def float_result(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.Float_resultContext(self, self._ctx, _parentState)
+        localctx = RubyParser.Float_resultContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 100
         self.enterRecursionRule(localctx, 100, self.RULE_float_result, _p)
@@ -4789,7 +4789,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 613
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.MUL) | (1 << RubyLexerParser.DIV) | (1 << RubyLexerParser.MOD))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.MUL) | (1 << RubyParser.DIV) | (1 << RubyParser.MOD))) != 0)):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -4804,7 +4804,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 617
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not(_la==RubyLexerParser.PLUS or _la==RubyLexerParser.MINUS):
+                if not(_la==RubyParser.PLUS or _la==RubyParser.MINUS):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -4815,11 +4815,11 @@ class RubyLexerParser ( Parser ):
 
             elif la_ == 3:
                 self.state = 620
-                self.match(RubyLexerParser.LEFT_RBRACKET)
+                self.match(RubyParser.LEFT_RBRACKET)
                 self.state = 621
                 self.float_result(0)
                 self.state = 622
-                self.match(RubyLexerParser.RIGHT_RBRACKET)
+                self.match(RubyParser.RIGHT_RBRACKET)
                 pass
 
             elif la_ == 4:
@@ -4841,7 +4841,7 @@ class RubyLexerParser ( Parser ):
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,41,self._ctx)
                     if la_ == 1:
-                        localctx = RubyLexerParser.Float_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Float_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_float_result)
                         self.state = 627
                         if not self.precpred(self._ctx, 8):
@@ -4850,7 +4850,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 628
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.MUL) | (1 << RubyLexerParser.DIV) | (1 << RubyLexerParser.MOD))) != 0)):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.MUL) | (1 << RubyParser.DIV) | (1 << RubyParser.MOD))) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4860,7 +4860,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 2:
-                        localctx = RubyLexerParser.Float_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Float_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_float_result)
                         self.state = 630
                         if not self.precpred(self._ctx, 5):
@@ -4869,7 +4869,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 631
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==RubyLexerParser.PLUS or _la==RubyLexerParser.MINUS):
+                        if not(_la==RubyParser.PLUS or _la==RubyParser.MINUS):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4879,7 +4879,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 3:
-                        localctx = RubyLexerParser.Float_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Float_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_float_result)
                         self.state = 633
                         if not self.precpred(self._ctx, 6):
@@ -4888,7 +4888,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 634
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.MUL) | (1 << RubyLexerParser.DIV) | (1 << RubyLexerParser.MOD))) != 0)):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.MUL) | (1 << RubyParser.DIV) | (1 << RubyParser.MOD))) != 0)):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4898,7 +4898,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 4:
-                        localctx = RubyLexerParser.Float_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.Float_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_float_result)
                         self.state = 636
                         if not self.precpred(self._ctx, 3):
@@ -4907,7 +4907,7 @@ class RubyLexerParser ( Parser ):
                         self.state = 637
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
-                        if not(_la==RubyLexerParser.PLUS or _la==RubyLexerParser.MINUS):
+                        if not(_la==RubyParser.PLUS or _la==RubyParser.MINUS):
                             localctx.op = self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -4939,24 +4939,24 @@ class RubyLexerParser ( Parser ):
             self.op = None # Token
 
         def int_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_resultContext,0)
 
 
         def string_result(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.String_resultContext)
+                return self.getTypedRuleContexts(RubyParser.String_resultContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.String_resultContext,i)
+                return self.getTypedRuleContext(RubyParser.String_resultContext,i)
 
 
         def MUL(self):
-            return self.getToken(RubyLexerParser.MUL, 0)
+            return self.getToken(RubyParser.MUL, 0)
 
         def PLUS(self):
-            return self.getToken(RubyLexerParser.PLUS, 0)
+            return self.getToken(RubyParser.PLUS, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_string_result
+            return RubyParser.RULE_string_result
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterString_result" ):
@@ -4977,7 +4977,7 @@ class RubyLexerParser ( Parser ):
     def string_result(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.String_resultContext(self, self._ctx, _parentState)
+        localctx = RubyParser.String_resultContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 102
         self.enterRecursionRule(localctx, 102, self.RULE_string_result, _p)
@@ -4986,7 +4986,7 @@ class RubyLexerParser ( Parser ):
             self.state = 645
             self.int_result(0)
             self.state = 646
-            localctx.op = self.match(RubyLexerParser.MUL)
+            localctx.op = self.match(RubyParser.MUL)
             self.state = 647
             self.string_result(2)
             self._ctx.stop = self._input.LT(-1)
@@ -5002,27 +5002,27 @@ class RubyLexerParser ( Parser ):
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,43,self._ctx)
                     if la_ == 1:
-                        localctx = RubyLexerParser.String_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.String_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_string_result)
                         self.state = 649
                         if not self.precpred(self._ctx, 1):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 1)")
                         self.state = 650
-                        localctx.op = self.match(RubyLexerParser.PLUS)
+                        localctx.op = self.match(RubyParser.PLUS)
                         self.state = 651
                         self.string_result(2)
                         pass
 
                     elif la_ == 2:
-                        localctx = RubyLexerParser.String_resultContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.String_resultContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_string_result)
                         self.state = 652
                         if not self.precpred(self._ctx, 3):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
                         self.state = 653
-                        localctx.op = self.match(RubyLexerParser.MUL)
+                        localctx.op = self.match(RubyParser.MUL)
                         self.state = 654
                         self.int_result(0)
                         pass
@@ -5052,27 +5052,27 @@ class RubyLexerParser ( Parser ):
             self.right = None # Comparison_listContext
 
         def comparison(self):
-            return self.getTypedRuleContext(RubyLexerParser.ComparisonContext,0)
+            return self.getTypedRuleContext(RubyParser.ComparisonContext,0)
 
 
         def AND(self):
-            return self.getToken(RubyLexerParser.AND, 0)
+            return self.getToken(RubyParser.AND, 0)
 
         def comparison_list(self):
-            return self.getTypedRuleContext(RubyLexerParser.Comparison_listContext,0)
+            return self.getTypedRuleContext(RubyParser.Comparison_listContext,0)
 
 
         def OR(self):
-            return self.getToken(RubyLexerParser.OR, 0)
+            return self.getToken(RubyParser.OR, 0)
 
         def LEFT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.LEFT_RBRACKET, 0)
+            return self.getToken(RubyParser.LEFT_RBRACKET, 0)
 
         def RIGHT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.RIGHT_RBRACKET, 0)
+            return self.getToken(RubyParser.RIGHT_RBRACKET, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_comparison_list
+            return RubyParser.RULE_comparison_list
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterComparison_list" ):
@@ -5093,7 +5093,7 @@ class RubyLexerParser ( Parser ):
 
     def comparison_list(self):
 
-        localctx = RubyLexerParser.Comparison_listContext(self, self._ctx, self.state)
+        localctx = RubyParser.Comparison_listContext(self, self._ctx, self.state)
         self.enterRule(localctx, 104, self.RULE_comparison_list)
         try:
             self.state = 673
@@ -5104,7 +5104,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 660
                 localctx.left = self.comparison()
                 self.state = 661
-                localctx.op = self.match(RubyLexerParser.AND)
+                localctx.op = self.match(RubyParser.AND)
                 self.state = 662
                 localctx.right = self.comparison_list()
                 pass
@@ -5114,7 +5114,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 664
                 localctx.left = self.comparison()
                 self.state = 665
-                localctx.op = self.match(RubyLexerParser.OR)
+                localctx.op = self.match(RubyParser.OR)
                 self.state = 666
                 localctx.right = self.comparison_list()
                 pass
@@ -5122,11 +5122,11 @@ class RubyLexerParser ( Parser ):
             elif la_ == 3:
                 self.enterOuterAlt(localctx, 3)
                 self.state = 668
-                self.match(RubyLexerParser.LEFT_RBRACKET)
+                self.match(RubyParser.LEFT_RBRACKET)
                 self.state = 669
                 self.comparison_list()
                 self.state = 670
-                self.match(RubyLexerParser.RIGHT_RBRACKET)
+                self.match(RubyParser.RIGHT_RBRACKET)
                 pass
 
             elif la_ == 4:
@@ -5157,31 +5157,31 @@ class RubyLexerParser ( Parser ):
 
         def comp_var(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.Comp_varContext)
+                return self.getTypedRuleContexts(RubyParser.Comp_varContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.Comp_varContext,i)
+                return self.getTypedRuleContext(RubyParser.Comp_varContext,i)
 
 
         def LESS(self):
-            return self.getToken(RubyLexerParser.LESS, 0)
+            return self.getToken(RubyParser.LESS, 0)
 
         def GREATER(self):
-            return self.getToken(RubyLexerParser.GREATER, 0)
+            return self.getToken(RubyParser.GREATER, 0)
 
         def LESS_EQUAL(self):
-            return self.getToken(RubyLexerParser.LESS_EQUAL, 0)
+            return self.getToken(RubyParser.LESS_EQUAL, 0)
 
         def GREATER_EQUAL(self):
-            return self.getToken(RubyLexerParser.GREATER_EQUAL, 0)
+            return self.getToken(RubyParser.GREATER_EQUAL, 0)
 
         def EQUAL(self):
-            return self.getToken(RubyLexerParser.EQUAL, 0)
+            return self.getToken(RubyParser.EQUAL, 0)
 
         def NOT_EQUAL(self):
-            return self.getToken(RubyLexerParser.NOT_EQUAL, 0)
+            return self.getToken(RubyParser.NOT_EQUAL, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_comparison
+            return RubyParser.RULE_comparison
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterComparison" ):
@@ -5202,7 +5202,7 @@ class RubyLexerParser ( Parser ):
 
     def comparison(self):
 
-        localctx = RubyLexerParser.ComparisonContext(self, self._ctx, self.state)
+        localctx = RubyParser.ComparisonContext(self, self._ctx, self.state)
         self.enterRule(localctx, 106, self.RULE_comparison)
         self._la = 0 # Token type
         try:
@@ -5216,7 +5216,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 676
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.GREATER) | (1 << RubyLexerParser.LESS) | (1 << RubyLexerParser.LESS_EQUAL) | (1 << RubyLexerParser.GREATER_EQUAL))) != 0)):
+                if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.GREATER) | (1 << RubyParser.LESS) | (1 << RubyParser.LESS_EQUAL) | (1 << RubyParser.GREATER_EQUAL))) != 0)):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -5232,7 +5232,7 @@ class RubyLexerParser ( Parser ):
                 self.state = 680
                 localctx.op = self._input.LT(1)
                 _la = self._input.LA(1)
-                if not(_la==RubyLexerParser.EQUAL or _la==RubyLexerParser.NOT_EQUAL):
+                if not(_la==RubyParser.EQUAL or _la==RubyParser.NOT_EQUAL):
                     localctx.op = self._errHandler.recoverInline(self)
                 else:
                     self._errHandler.reportMatch(self)
@@ -5259,19 +5259,19 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def all_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.All_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.All_resultContext,0)
 
 
         def array_selector(self):
-            return self.getTypedRuleContext(RubyLexerParser.Array_selectorContext,0)
+            return self.getTypedRuleContext(RubyParser.Array_selectorContext,0)
 
 
         def id_(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_Context,0)
+            return self.getTypedRuleContext(RubyParser.Id_Context,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_comp_var
+            return RubyParser.RULE_comp_var
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterComp_var" ):
@@ -5292,7 +5292,7 @@ class RubyLexerParser ( Parser ):
 
     def comp_var(self):
 
-        localctx = RubyLexerParser.Comp_varContext(self, self._ctx, self.state)
+        localctx = RubyParser.Comp_varContext(self, self._ctx, self.state)
         self.enterRule(localctx, 108, self.RULE_comp_var)
         try:
             self.state = 688
@@ -5334,15 +5334,15 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def id_(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_Context,0)
+            return self.getTypedRuleContext(RubyParser.Id_Context,0)
 
 
         def id_global(self):
-            return self.getTypedRuleContext(RubyLexerParser.Id_globalContext,0)
+            return self.getTypedRuleContext(RubyParser.Id_globalContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_lvalue
+            return RubyParser.RULE_lvalue
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterLvalue" ):
@@ -5363,18 +5363,18 @@ class RubyLexerParser ( Parser ):
 
     def lvalue(self):
 
-        localctx = RubyLexerParser.LvalueContext(self, self._ctx, self.state)
+        localctx = RubyParser.LvalueContext(self, self._ctx, self.state)
         self.enterRule(localctx, 110, self.RULE_lvalue)
         try:
             self.state = 692
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [RubyLexerParser.ID]:
+            if token in [RubyParser.ID]:
                 self.enterOuterAlt(localctx, 1)
                 self.state = 690
                 self.id_()
                 pass
-            elif token in [RubyLexerParser.ID_GLOBAL]:
+            elif token in [RubyParser.ID_GLOBAL]:
                 self.enterOuterAlt(localctx, 2)
                 self.state = 691
                 self.id_global()
@@ -5399,137 +5399,137 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def lvalue(self):
-            return self.getTypedRuleContext(RubyLexerParser.LvalueContext,0)
+            return self.getTypedRuleContext(RubyParser.LvalueContext,0)
 
 
         def initial_array_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.Initial_array_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.Initial_array_assignmentContext,0)
 
 
         def array_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.Array_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.Array_assignmentContext,0)
 
 
         def int_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_resultContext,0)
 
 
         def float_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.Float_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.Float_resultContext,0)
 
 
         def string_result(self):
-            return self.getTypedRuleContext(RubyLexerParser.String_resultContext,0)
+            return self.getTypedRuleContext(RubyParser.String_resultContext,0)
 
 
         def global_set(self):
-            return self.getTypedRuleContext(RubyLexerParser.Global_setContext,0)
+            return self.getTypedRuleContext(RubyParser.Global_setContext,0)
 
 
         def global_get(self):
-            return self.getTypedRuleContext(RubyLexerParser.Global_getContext,0)
+            return self.getTypedRuleContext(RubyParser.Global_getContext,0)
 
 
         def dynamic_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.Dynamic_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.Dynamic_assignmentContext,0)
 
 
         def string_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.String_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.String_assignmentContext,0)
 
 
         def float_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.Float_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.Float_assignmentContext,0)
 
 
         def int_assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_assignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_assignmentContext,0)
 
 
         def assignment(self):
-            return self.getTypedRuleContext(RubyLexerParser.AssignmentContext,0)
+            return self.getTypedRuleContext(RubyParser.AssignmentContext,0)
 
 
         def function_call(self):
-            return self.getTypedRuleContext(RubyLexerParser.Function_callContext,0)
+            return self.getTypedRuleContext(RubyParser.Function_callContext,0)
 
 
         def bool_t(self):
-            return self.getTypedRuleContext(RubyLexerParser.Bool_tContext,0)
+            return self.getTypedRuleContext(RubyParser.Bool_tContext,0)
 
 
         def float_t(self):
-            return self.getTypedRuleContext(RubyLexerParser.Float_tContext,0)
+            return self.getTypedRuleContext(RubyParser.Float_tContext,0)
 
 
         def int_t(self):
-            return self.getTypedRuleContext(RubyLexerParser.Int_tContext,0)
+            return self.getTypedRuleContext(RubyParser.Int_tContext,0)
 
 
         def nil_t(self):
-            return self.getTypedRuleContext(RubyLexerParser.Nil_tContext,0)
+            return self.getTypedRuleContext(RubyParser.Nil_tContext,0)
 
 
         def NOT(self):
-            return self.getToken(RubyLexerParser.NOT, 0)
+            return self.getToken(RubyParser.NOT, 0)
 
         def rvalue(self, i:int=None):
             if i is None:
-                return self.getTypedRuleContexts(RubyLexerParser.RvalueContext)
+                return self.getTypedRuleContexts(RubyParser.RvalueContext)
             else:
-                return self.getTypedRuleContext(RubyLexerParser.RvalueContext,i)
+                return self.getTypedRuleContext(RubyParser.RvalueContext,i)
 
 
         def LEFT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.LEFT_RBRACKET, 0)
+            return self.getToken(RubyParser.LEFT_RBRACKET, 0)
 
         def RIGHT_RBRACKET(self):
-            return self.getToken(RubyLexerParser.RIGHT_RBRACKET, 0)
+            return self.getToken(RubyParser.RIGHT_RBRACKET, 0)
 
         def EXP(self):
-            return self.getToken(RubyLexerParser.EXP, 0)
+            return self.getToken(RubyParser.EXP, 0)
 
         def MUL(self):
-            return self.getToken(RubyLexerParser.MUL, 0)
+            return self.getToken(RubyParser.MUL, 0)
 
         def DIV(self):
-            return self.getToken(RubyLexerParser.DIV, 0)
+            return self.getToken(RubyParser.DIV, 0)
 
         def MOD(self):
-            return self.getToken(RubyLexerParser.MOD, 0)
+            return self.getToken(RubyParser.MOD, 0)
 
         def PLUS(self):
-            return self.getToken(RubyLexerParser.PLUS, 0)
+            return self.getToken(RubyParser.PLUS, 0)
 
         def MINUS(self):
-            return self.getToken(RubyLexerParser.MINUS, 0)
+            return self.getToken(RubyParser.MINUS, 0)
 
         def LESS(self):
-            return self.getToken(RubyLexerParser.LESS, 0)
+            return self.getToken(RubyParser.LESS, 0)
 
         def GREATER(self):
-            return self.getToken(RubyLexerParser.GREATER, 0)
+            return self.getToken(RubyParser.GREATER, 0)
 
         def LESS_EQUAL(self):
-            return self.getToken(RubyLexerParser.LESS_EQUAL, 0)
+            return self.getToken(RubyParser.LESS_EQUAL, 0)
 
         def GREATER_EQUAL(self):
-            return self.getToken(RubyLexerParser.GREATER_EQUAL, 0)
+            return self.getToken(RubyParser.GREATER_EQUAL, 0)
 
         def EQUAL(self):
-            return self.getToken(RubyLexerParser.EQUAL, 0)
+            return self.getToken(RubyParser.EQUAL, 0)
 
         def NOT_EQUAL(self):
-            return self.getToken(RubyLexerParser.NOT_EQUAL, 0)
+            return self.getToken(RubyParser.NOT_EQUAL, 0)
 
         def OR(self):
-            return self.getToken(RubyLexerParser.OR, 0)
+            return self.getToken(RubyParser.OR, 0)
 
         def AND(self):
-            return self.getToken(RubyLexerParser.AND, 0)
+            return self.getToken(RubyParser.AND, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_rvalue
+            return RubyParser.RULE_rvalue
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterRvalue" ):
@@ -5550,7 +5550,7 @@ class RubyLexerParser ( Parser ):
     def rvalue(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.RvalueContext(self, self._ctx, _parentState)
+        localctx = RubyParser.RvalueContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 112
         self.enterRecursionRule(localctx, 112, self.RULE_rvalue, _p)
@@ -5652,18 +5652,18 @@ class RubyLexerParser ( Parser ):
 
             elif la_ == 19:
                 self.state = 713
-                self.match(RubyLexerParser.NOT)
+                self.match(RubyParser.NOT)
                 self.state = 714
                 self.rvalue(7)
                 pass
 
             elif la_ == 20:
                 self.state = 715
-                self.match(RubyLexerParser.LEFT_RBRACKET)
+                self.match(RubyParser.LEFT_RBRACKET)
                 self.state = 716
                 self.rvalue(0)
                 self.state = 717
-                self.match(RubyLexerParser.RIGHT_RBRACKET)
+                self.match(RubyParser.RIGHT_RBRACKET)
                 pass
 
 
@@ -5680,20 +5680,20 @@ class RubyLexerParser ( Parser ):
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,50,self._ctx)
                     if la_ == 1:
-                        localctx = RubyLexerParser.RvalueContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.RvalueContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_rvalue)
                         self.state = 721
                         if not self.precpred(self._ctx, 8):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 8)")
                         self.state = 722
-                        self.match(RubyLexerParser.EXP)
+                        self.match(RubyParser.EXP)
                         self.state = 723
                         self.rvalue(9)
                         pass
 
                     elif la_ == 2:
-                        localctx = RubyLexerParser.RvalueContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.RvalueContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_rvalue)
                         self.state = 724
                         if not self.precpred(self._ctx, 6):
@@ -5701,7 +5701,7 @@ class RubyLexerParser ( Parser ):
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 6)")
                         self.state = 725
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.MUL) | (1 << RubyLexerParser.DIV) | (1 << RubyLexerParser.MOD))) != 0)):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.MUL) | (1 << RubyParser.DIV) | (1 << RubyParser.MOD))) != 0)):
                             self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -5711,7 +5711,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 3:
-                        localctx = RubyLexerParser.RvalueContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.RvalueContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_rvalue)
                         self.state = 727
                         if not self.precpred(self._ctx, 5):
@@ -5719,7 +5719,7 @@ class RubyLexerParser ( Parser ):
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 5)")
                         self.state = 728
                         _la = self._input.LA(1)
-                        if not(_la==RubyLexerParser.PLUS or _la==RubyLexerParser.MINUS):
+                        if not(_la==RubyParser.PLUS or _la==RubyParser.MINUS):
                             self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -5729,7 +5729,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 4:
-                        localctx = RubyLexerParser.RvalueContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.RvalueContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_rvalue)
                         self.state = 730
                         if not self.precpred(self._ctx, 4):
@@ -5737,7 +5737,7 @@ class RubyLexerParser ( Parser ):
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
                         self.state = 731
                         _la = self._input.LA(1)
-                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyLexerParser.GREATER) | (1 << RubyLexerParser.LESS) | (1 << RubyLexerParser.LESS_EQUAL) | (1 << RubyLexerParser.GREATER_EQUAL))) != 0)):
+                        if not((((_la) & ~0x3f) == 0 and ((1 << _la) & ((1 << RubyParser.GREATER) | (1 << RubyParser.LESS) | (1 << RubyParser.LESS_EQUAL) | (1 << RubyParser.GREATER_EQUAL))) != 0)):
                             self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -5747,7 +5747,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 5:
-                        localctx = RubyLexerParser.RvalueContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.RvalueContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_rvalue)
                         self.state = 733
                         if not self.precpred(self._ctx, 3):
@@ -5755,7 +5755,7 @@ class RubyLexerParser ( Parser ):
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 3)")
                         self.state = 734
                         _la = self._input.LA(1)
-                        if not(_la==RubyLexerParser.EQUAL or _la==RubyLexerParser.NOT_EQUAL):
+                        if not(_la==RubyParser.EQUAL or _la==RubyParser.NOT_EQUAL):
                             self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -5765,7 +5765,7 @@ class RubyLexerParser ( Parser ):
                         pass
 
                     elif la_ == 6:
-                        localctx = RubyLexerParser.RvalueContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.RvalueContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_rvalue)
                         self.state = 736
                         if not self.precpred(self._ctx, 2):
@@ -5773,7 +5773,7 @@ class RubyLexerParser ( Parser ):
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 2)")
                         self.state = 737
                         _la = self._input.LA(1)
-                        if not(_la==RubyLexerParser.AND or _la==RubyLexerParser.OR):
+                        if not(_la==RubyParser.AND or _la==RubyParser.OR):
                             self._errHandler.recoverInline(self)
                         else:
                             self._errHandler.reportMatch(self)
@@ -5804,10 +5804,10 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def BREAK(self):
-            return self.getToken(RubyLexerParser.BREAK, 0)
+            return self.getToken(RubyParser.BREAK, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_break_expression
+            return RubyParser.RULE_break_expression
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBreak_expression" ):
@@ -5828,12 +5828,12 @@ class RubyLexerParser ( Parser ):
 
     def break_expression(self):
 
-        localctx = RubyLexerParser.Break_expressionContext(self, self._ctx, self.state)
+        localctx = RubyParser.Break_expressionContext(self, self._ctx, self.state)
         self.enterRule(localctx, 114, self.RULE_break_expression)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 744
-            self.match(RubyLexerParser.BREAK)
+            self.match(RubyParser.BREAK)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5851,10 +5851,10 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def FLOAT(self):
-            return self.getToken(RubyLexerParser.FLOAT, 0)
+            return self.getToken(RubyParser.FLOAT, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_float_t
+            return RubyParser.RULE_float_t
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterFloat_t" ):
@@ -5875,12 +5875,12 @@ class RubyLexerParser ( Parser ):
 
     def float_t(self):
 
-        localctx = RubyLexerParser.Float_tContext(self, self._ctx, self.state)
+        localctx = RubyParser.Float_tContext(self, self._ctx, self.state)
         self.enterRule(localctx, 116, self.RULE_float_t)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 746
-            self.match(RubyLexerParser.FLOAT)
+            self.match(RubyParser.FLOAT)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5898,10 +5898,10 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def INT(self):
-            return self.getToken(RubyLexerParser.INT, 0)
+            return self.getToken(RubyParser.INT, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_int_t
+            return RubyParser.RULE_int_t
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterInt_t" ):
@@ -5922,12 +5922,12 @@ class RubyLexerParser ( Parser ):
 
     def int_t(self):
 
-        localctx = RubyLexerParser.Int_tContext(self, self._ctx, self.state)
+        localctx = RubyParser.Int_tContext(self, self._ctx, self.state)
         self.enterRule(localctx, 118, self.RULE_int_t)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 748
-            self.match(RubyLexerParser.INT)
+            self.match(RubyParser.INT)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -5945,13 +5945,13 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def TRUE(self):
-            return self.getToken(RubyLexerParser.TRUE, 0)
+            return self.getToken(RubyParser.TRUE, 0)
 
         def FALSE(self):
-            return self.getToken(RubyLexerParser.FALSE, 0)
+            return self.getToken(RubyParser.FALSE, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_bool_t
+            return RubyParser.RULE_bool_t
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterBool_t" ):
@@ -5972,14 +5972,14 @@ class RubyLexerParser ( Parser ):
 
     def bool_t(self):
 
-        localctx = RubyLexerParser.Bool_tContext(self, self._ctx, self.state)
+        localctx = RubyParser.Bool_tContext(self, self._ctx, self.state)
         self.enterRule(localctx, 120, self.RULE_bool_t)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 750
             _la = self._input.LA(1)
-            if not(_la==RubyLexerParser.TRUE or _la==RubyLexerParser.FALSE):
+            if not(_la==RubyParser.TRUE or _la==RubyParser.FALSE):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
@@ -6001,10 +6001,10 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def NIL(self):
-            return self.getToken(RubyLexerParser.NIL, 0)
+            return self.getToken(RubyParser.NIL, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_nil_t
+            return RubyParser.RULE_nil_t
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterNil_t" ):
@@ -6025,12 +6025,12 @@ class RubyLexerParser ( Parser ):
 
     def nil_t(self):
 
-        localctx = RubyLexerParser.Nil_tContext(self, self._ctx, self.state)
+        localctx = RubyParser.Nil_tContext(self, self._ctx, self.state)
         self.enterRule(localctx, 122, self.RULE_nil_t)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 752
-            self.match(RubyLexerParser.NIL)
+            self.match(RubyParser.NIL)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -6048,10 +6048,10 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def ID(self):
-            return self.getToken(RubyLexerParser.ID, 0)
+            return self.getToken(RubyParser.ID, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_id_
+            return RubyParser.RULE_id_
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterId_" ):
@@ -6072,12 +6072,12 @@ class RubyLexerParser ( Parser ):
 
     def id_(self):
 
-        localctx = RubyLexerParser.Id_Context(self, self._ctx, self.state)
+        localctx = RubyParser.Id_Context(self, self._ctx, self.state)
         self.enterRule(localctx, 124, self.RULE_id_)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 754
-            self.match(RubyLexerParser.ID)
+            self.match(RubyParser.ID)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -6095,10 +6095,10 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def ID_GLOBAL(self):
-            return self.getToken(RubyLexerParser.ID_GLOBAL, 0)
+            return self.getToken(RubyParser.ID_GLOBAL, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_id_global
+            return RubyParser.RULE_id_global
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterId_global" ):
@@ -6119,12 +6119,12 @@ class RubyLexerParser ( Parser ):
 
     def id_global(self):
 
-        localctx = RubyLexerParser.Id_globalContext(self, self._ctx, self.state)
+        localctx = RubyParser.Id_globalContext(self, self._ctx, self.state)
         self.enterRule(localctx, 126, self.RULE_id_global)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 756
-            self.match(RubyLexerParser.ID_GLOBAL)
+            self.match(RubyParser.ID_GLOBAL)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -6142,18 +6142,18 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def SEMICOLON(self):
-            return self.getToken(RubyLexerParser.SEMICOLON, 0)
+            return self.getToken(RubyParser.SEMICOLON, 0)
 
         def crlf(self):
-            return self.getTypedRuleContext(RubyLexerParser.CrlfContext,0)
+            return self.getTypedRuleContext(RubyParser.CrlfContext,0)
 
 
         def terminator(self):
-            return self.getTypedRuleContext(RubyLexerParser.TerminatorContext,0)
+            return self.getTypedRuleContext(RubyParser.TerminatorContext,0)
 
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_terminator
+            return RubyParser.RULE_terminator
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterTerminator" ):
@@ -6174,7 +6174,7 @@ class RubyLexerParser ( Parser ):
     def terminator(self, _p:int=0):
         _parentctx = self._ctx
         _parentState = self.state
-        localctx = RubyLexerParser.TerminatorContext(self, self._ctx, _parentState)
+        localctx = RubyParser.TerminatorContext(self, self._ctx, _parentState)
         _prevctx = localctx
         _startState = 128
         self.enterRecursionRule(localctx, 128, self.RULE_terminator, _p)
@@ -6183,11 +6183,11 @@ class RubyLexerParser ( Parser ):
             self.state = 761
             self._errHandler.sync(self)
             token = self._input.LA(1)
-            if token in [RubyLexerParser.SEMICOLON]:
+            if token in [RubyParser.SEMICOLON]:
                 self.state = 759
-                self.match(RubyLexerParser.SEMICOLON)
+                self.match(RubyParser.SEMICOLON)
                 pass
-            elif token in [RubyLexerParser.CRLF]:
+            elif token in [RubyParser.CRLF]:
                 self.state = 760
                 self.crlf()
                 pass
@@ -6207,18 +6207,18 @@ class RubyLexerParser ( Parser ):
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,53,self._ctx)
                     if la_ == 1:
-                        localctx = RubyLexerParser.TerminatorContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.TerminatorContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_terminator)
                         self.state = 763
                         if not self.precpred(self._ctx, 4):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 4)")
                         self.state = 764
-                        self.match(RubyLexerParser.SEMICOLON)
+                        self.match(RubyParser.SEMICOLON)
                         pass
 
                     elif la_ == 2:
-                        localctx = RubyLexerParser.TerminatorContext(self, _parentctx, _parentState)
+                        localctx = RubyParser.TerminatorContext(self, _parentctx, _parentState)
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_terminator)
                         self.state = 765
                         if not self.precpred(self._ctx, 3):
@@ -6250,10 +6250,10 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def ELSE(self):
-            return self.getToken(RubyLexerParser.ELSE, 0)
+            return self.getToken(RubyParser.ELSE, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_else_token
+            return RubyParser.RULE_else_token
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterElse_token" ):
@@ -6274,12 +6274,12 @@ class RubyLexerParser ( Parser ):
 
     def else_token(self):
 
-        localctx = RubyLexerParser.Else_tokenContext(self, self._ctx, self.state)
+        localctx = RubyParser.Else_tokenContext(self, self._ctx, self.state)
         self.enterRule(localctx, 130, self.RULE_else_token)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 772
-            self.match(RubyLexerParser.ELSE)
+            self.match(RubyParser.ELSE)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -6297,10 +6297,10 @@ class RubyLexerParser ( Parser ):
             self.parser = parser
 
         def CRLF(self):
-            return self.getToken(RubyLexerParser.CRLF, 0)
+            return self.getToken(RubyParser.CRLF, 0)
 
         def getRuleIndex(self):
-            return RubyLexerParser.RULE_crlf
+            return RubyParser.RULE_crlf
 
         def enterRule(self, listener:ParseTreeListener):
             if hasattr( listener, "enterCrlf" ):
@@ -6321,12 +6321,12 @@ class RubyLexerParser ( Parser ):
 
     def crlf(self):
 
-        localctx = RubyLexerParser.CrlfContext(self, self._ctx, self.state)
+        localctx = RubyParser.CrlfContext(self, self._ctx, self.state)
         self.enterRule(localctx, 132, self.RULE_crlf)
         try:
             self.enterOuterAlt(localctx, 1)
             self.state = 774
-            self.match(RubyLexerParser.CRLF)
+            self.match(RubyParser.CRLF)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

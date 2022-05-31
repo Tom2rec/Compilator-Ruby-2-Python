@@ -1,4 +1,4 @@
-# Generated from /home/tturek/Documents/personal/UST/Sophomore_2/Compilators/Compilator-Ruby-2-Python/Project/RubyLexer.g4 by ANTLR 4.10.1
+# Generated from /home/tturek/Documents/personal/UST/Sophomore_2/Compilators/Compilator-Ruby-2-Python/Project/Ruby.g4 by ANTLR 4.10.1
 from antlr4 import *
 from io import StringIO
 import sys
@@ -133,7 +133,7 @@ def serializedATN():
         108,244,250,256,274,278,294,303,312,319,324,331,337,1,6,0,0
     ]
 
-class RubyLexerLexer(Lexer):
+class RubyLexer(Lexer):
 
     atn = ATNDeserializer().deserialize(serializedATN())
 
@@ -225,7 +225,7 @@ class RubyLexerLexer(Lexer):
                   "MULTI_LINE_COMMENT", "WHITE_SPACE", "INT", "FLOAT", "ID", 
                   "ID_GLOBAL" ]
 
-    grammarFileName = "RubyLexer.g4"
+    grammarFileName = "Ruby.g4"
 
     def __init__(self, input=None, output:TextIO = sys.stdout):
         super().__init__(input, output)

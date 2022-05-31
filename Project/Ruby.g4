@@ -1,4 +1,4 @@
-grammar RubyLexer;
+grammar Ruby;
 
 prog : expression_list;
 
