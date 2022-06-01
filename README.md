@@ -1,4 +1,4 @@
-# Coverter-Ruby-2-Python
+# Ruby-2-Python
 ## Autorzy
 - Jakub Woźniak jakubwozniak@student.agh.edu.pl
 - Tomasz Turek tomaszturek@student.agh.edu.pl
@@ -382,7 +382,7 @@ crlf : CRLF;
 - Wykorzystany wzorzec **Visitor**
 
 ## Przykłady
-[Folder z przykładami](https://github.com/Tom2rec/Compilator-Ruby-2-Python/tree/main/Examples)
+[Folder z przykładami](https://github.com/Tom2rec/Ruby-2-Python/tree/main/Examples)
 
 ## Instrukcja obsługi
 ```
