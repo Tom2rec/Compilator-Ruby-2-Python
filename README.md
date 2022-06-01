@@ -385,6 +385,16 @@ crlf : CRLF;
 [Folder z przykładami](https://github.com/Tom2rec/Ruby-2-Python/tree/main/Examples)
 
 ## Instrukcja obsługi
+
+```bash
+git clone git@github.com:Tom2rec/Ruby-2-Python.git 
 ```
-run
+```bash
+cd Ruby-2-Python
+```
+```bash
+pip install requirements.txt
+```
+```bash
+python3 main.py Examples/test.rb
 ```
