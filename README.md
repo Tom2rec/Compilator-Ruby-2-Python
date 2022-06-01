@@ -1,4 +1,85 @@
-# Compilator-Ruby-2-Python
+# Coverter-Ruby-2-Python
+## Autorzy
+- Jakub Woźniak jakubwozniak@student.agh.edu.pl
+- Tomasz Turek tomaszturek@student.agh.edu.pl
+## Założenia programu
+#### Ogólne cele programu
+- Stworzenie programu, który będzie umożliwiał pisanie kodu w Ruby oraz jego wykonaie w Pythonie
+#### Rodzaj translatora
+- interpreter
+#### Planowany wynik działania programu
+- Translacja kodu z **Ruby** do **Pythona**
+- Możliwość uruchamiania kodu w **Pythonie**
+#### Planowany język implementacji
+- **Python**
+#### Sposób realizacji skanera/parsera:
+- Użycie generatora parserów **ANTLR4**
+
+## Tokeny **Ruby**
+```antlr
+COMMA : ',';
+SEMICOLON : ';';
+CRLF : '\r'? '\n';
+
+REQUIRE : 'require';
+END : 'end';
+DEF : 'def';
+RETURN : 'return';
+
+IF: 'if';
+ELSE : 'else';
+ELSIF : 'elsif';
+UNLESS : 'unless';
+WHILE : 'while';
+RETRY : 'retry';
+BREAK : 'break';
+FOR : 'for';
+
+TRUE : 'true';
+FALSE : 'false';
+
+PLUS : '+';
+MINUS : '-';
+MUL : '*';
+DIV : '/';
+MOD : '%';
+EXP : '**';
+
+EQUAL : '==';
+NOT_EQUAL : '!=';
+GREATER : '>';
+LESS : '<';
+LESS_EQUAL : '<=';
+GREATER_EQUAL : '>=';
+
+ASSIGN : '=';
+PLUS_ASSIGN : '+=';
+MINUS_ASSIGN : '-=';
+MUL_ASSIGN : '*=';
+DIV_ASSIGN : '/=';
+MOD_ASSIGN : '%=';
+EXP_ASSIGN : '**=';
+
+AND : 'and' | '&&';
+OR : 'or' | '||';
+NOT : 'not' | '!';
+
+LEFT_RBRACKET : '(';
+RIGHT_RBRACKET : ')';
+LEFT_SBRACKET : '[';
+RIGHT_SBRACKET : ']';
+
+NIL : 'nil';
+
+SINGLE_LINE_COMMENT : ('#' ~('\r' | '\n')* '\r'? '\n') -> skip;
+MULTI_LINE_COMMENT : ('=begin' .*? '=end' '\r'? '\n') -> skip;
+WHITE_SPACE : (' '|'\t')+ -> skip;
+
+INT : [0-9]+;
+FLOAT : [0-9]*'.'[0-9]+;
+ID : [a-zA-Z_][a-zA-Z0-9_]*;
+ID_GLOBAL : '$'ID;
+```
 
 ## Gramatyka **Ruby** w postaci **ANTLR4**
 
@@ -284,68 +365,26 @@ else_token : ELSE;
 crlf : CRLF;
 ```
 
-## Tokeny **Ruby**
-```antlr
-COMMA : ',';
-SEMICOLON : ';';
-CRLF : '\r'? '\n';
+## Opis i schemat struktury programu
+1. Lexer ANTLR4 -> Python
+2. Parser ANTLR4 -> Python
+3. Visitor Python
+4. Interpreter Python
 
-REQUIRE : 'require';
-END : 'end';
-DEF : 'def';
-RETURN : 'return';
+## Informacje o stosowanych narzędziach i technologiach
+- Technologie  
+  - ANTLR4
+  - Python3.9
+- Narzędzia
+  - Pycharm
 
-IF: 'if';
-ELSE : 'else';
-ELSIF : 'elsif';
-UNLESS : 'unless';
-WHILE : 'while';
-RETRY : 'retry';
-BREAK : 'break';
-FOR : 'for';
+## Informacje o zastosowanych meotdach i algorytmach
+- Wykorzystany wzorzec **Visitor**
 
-TRUE : 'true';
-FALSE : 'false';
+## Przykłady
+[Folder z przykładami](https://github.com/Tom2rec/Compilator-Ruby-2-Python/tree/main/Examples)
 
-PLUS : '+';
-MINUS : '-';
-MUL : '*';
-DIV : '/';
-MOD : '%';
-EXP : '**';
-
-EQUAL : '==';
-NOT_EQUAL : '!=';
-GREATER : '>';
-LESS : '<';
-LESS_EQUAL : '<=';
-GREATER_EQUAL : '>=';
-
-ASSIGN : '=';
-PLUS_ASSIGN : '+=';
-MINUS_ASSIGN : '-=';
-MUL_ASSIGN : '*=';
-DIV_ASSIGN : '/=';
-MOD_ASSIGN : '%=';
-EXP_ASSIGN : '**=';
-
-AND : 'and' | '&&';
-OR : 'or' | '||';
-NOT : 'not' | '!';
-
-LEFT_RBRACKET : '(';
-RIGHT_RBRACKET : ')';
-LEFT_SBRACKET : '[';
-RIGHT_SBRACKET : ']';
-
-NIL : 'nil';
-
-SINGLE_LINE_COMMENT : ('#' ~('\r' | '\n')* '\r'? '\n') -> skip;
-MULTI_LINE_COMMENT : ('=begin' .*? '=end' '\r'? '\n') -> skip;
-WHITE_SPACE : (' '|'\t')+ -> skip;
-
-INT : [0-9]+;
-FLOAT : [0-9]*'.'[0-9]+;
-ID : [a-zA-Z_][a-zA-Z0-9_]*;
-ID_GLOBAL : '$'ID;
+## Instrukcja obsługi
+```
+run
 ```
