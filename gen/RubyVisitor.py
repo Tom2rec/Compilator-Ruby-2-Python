@@ -292,6 +292,7 @@ class RubyVisitor(ParseTreeVisitor):
     # Visit a parse tree produced by RubyParser#rvalue.
     def visitRvalue(self, ctx:RubyParser.RvalueContext):
         return self.visitChildren(ctx)
+        return self.visitChildren(ctx)
 
 
     # Visit a parse tree produced by RubyParser#break_expression.
