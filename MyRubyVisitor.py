@@ -83,28 +83,33 @@ class MyRubyVisitor(RubyVisitor):
             self.visit(ctx.if_elsif_statement())
 
     def visitIf_statement(self, ctx:RubyParser.If_statementContext):
-        return self.visitChildren(ctx)
+        if self.visit(ctx.cond_expression()):
+            self.visit(ctx.statement_body())
+        elif ctx.else_token():
+            self.visit(ctx.statement_body())
+        elif ctx.if_elsif_statement():
+            self.visit(ctx.if_elsif_statement())
 
     def visitComparison_list(self, ctx: RubyParser.Comparison_listContext):
-        op = ctx.op()
+        op = ctx.op
         if op:
-            if ctx.op == RubyLexer.AND:
+            if ctx.op.type == RubyLexer.AND:
                 return self.visit(ctx.left()) and self.visit(ctx.right)
-            if ctx.op == RubyLexer.OR:
+            if ctx.op.type == RubyLexer.OR:
                 return self.visit(ctx.left()) or self.visit(ctx.right)
         elif ctx.comparison():
             return self.visit(ctx.comparison())
 
     def visitComparison(self, ctx: RubyParser.ComparisonContext):
         ops = {
-            RubyLexer.LESS : (lambda x, y: x < y),
+            RubyLexer.LESS: (lambda x, y: x < y),
             RubyLexer.GREATER: (lambda x, y: x > y),
             RubyLexer.LESS_EQUAL: (lambda x, y: x <= y),
             RubyLexer.GREATER_EQUAL: (lambda x, y: x >= y),
             RubyLexer.EQUAL: (lambda x, y: x == y),
             RubyLexer.NOT_EQUAL: (lambda x, y: x != y)
         }
-        op = ctx.op()
+        op = ctx.op.type
 
         return ops[op](self.visit(ctx.left.comp_var()), self.visit(ctx.right.comp_var()))
 
@@ -134,7 +139,7 @@ class MyRubyVisitor(RubyVisitor):
         }
         if ctx.op:
             op = ctx.op.type
-            return ops[op](ctx.int_result(0), ctx.int_result(1))
+            return ops[op](self.visit(ctx.int_result(0)), self.visit(ctx.int_result(1)))
         else:
             return int(ctx.int_t().getText())
 
