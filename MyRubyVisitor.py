@@ -141,12 +141,14 @@ class MyRubyVisitor(RubyVisitor):
         if function_name in BuiltInFunctions.function_names:
             do = getattr(BuiltInFunctions, str(function_name))
             k = self.visit(ctx.params)
-            do(self, k)
+            do(k)
 
-    def visitFunction_call_params(self, ctx:RubyParser.Function_call_paramsContext):
+    def visitFunction_call_params(self, ctx: RubyParser.Function_call_paramsContext):
         params = []
         if ctx.COMMA():
-            params.append(self.visit(ctx.function_call_params()))
+            for param in self.visit(ctx.function_call_params()):
+                params.append(param)
+            params.append(self.visit(ctx.function_param()))
         else:
             params.append(self.visit(ctx.function_param()))
 

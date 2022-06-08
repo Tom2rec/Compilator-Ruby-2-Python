@@ -7,5 +7,8 @@ class BuiltInFunctions:
 
     function_names = ['puts']
 
-    def puts(self, ctx: RubyParser.Function_callContext):
-        print(ctx.params)
+    @staticmethod
+    def puts(params: list):
+        for param in params:
+            print(param, end=' ')
+        print()
