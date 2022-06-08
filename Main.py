@@ -17,4 +17,4 @@ if __name__ == "__main__":
     tree = parser.prog()
     # evaluator
     visitor = MyRubyVisitor()
-    print(visitor.visit(tree))
+    visitor.visit(tree)

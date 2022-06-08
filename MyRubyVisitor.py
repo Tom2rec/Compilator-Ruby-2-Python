@@ -1,3 +1,5 @@
+import copy
+
 from Functions.BuiltInFunctions import BuiltInFunctions
 from gen.RubyLexer import RubyLexer
 from gen.RubyParser import RubyParser
@@ -140,19 +142,21 @@ class MyRubyVisitor(RubyVisitor):
         function_name = ctx.name.getText()
         if function_name in BuiltInFunctions.function_names:
             do = getattr(BuiltInFunctions, str(function_name))
-            k = self.visit(ctx.params)
-            do(k)
+            self.visit(ctx.params)
+            params = copy.deepcopy(self.parameters)
+            self.parameters.clear()
+            do(params)
+
+    parameters = []
 
     def visitFunction_call_params(self, ctx: RubyParser.Function_call_paramsContext):
-        params = []
         if ctx.COMMA():
-            for param in self.visit(ctx.function_call_params()):
-                params.append(param)
-            params.append(self.visit(ctx.function_param()))
+            self.visit(ctx.function_call_params())
         else:
-            params.append(self.visit(ctx.function_param()))
+            self.parameters.append(self.visit(ctx.function_param()))
 
-        return params
+        if ctx.COMMA():
+            self.parameters.append(self.visit(ctx.function_param()))
 
 
 
