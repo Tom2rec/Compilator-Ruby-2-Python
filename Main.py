@@ -1,6 +1,6 @@
 from antlr4 import FileStream, CommonTokenStream
 
-from MyRubyVisitor import MyRubyVisitor
+from OwnRubyVisitor import OwnRubyVisitor
 from gen.RubyLexer import RubyLexer
 from gen.RubyParser import RubyParser
 
@@ -16,5 +16,6 @@ if __name__ == "__main__":
     parser = RubyParser(stream)
     tree = parser.prog()
     # evaluator
-    visitor = MyRubyVisitor()
-    visitor.visit(tree)
+    visitor = OwnRubyVisitor()
+    result = visitor.visit(tree)
+    print(result)

@@ -87,8 +87,8 @@ class MyRubyVisitor(RubyVisitor):
             self.visit(ctx.statement_body())
         elif ctx.else_token():
             self.visit(ctx.statement_body())
-        elif ctx.if_elsif_statement():
-            self.visit(ctx.if_elsif_statement())
+        # elif ctx.if_elsif_statement():
+        #     self.visit(ctx.if_elsif_statement())
 
     def visitComparison_list(self, ctx: RubyParser.Comparison_listContext):
         op = ctx.op
@@ -110,12 +110,8 @@ class MyRubyVisitor(RubyVisitor):
             RubyLexer.NOT_EQUAL: (lambda x, y: x != y)
         }
         op = ctx.op.type
-
+        a = self.visit(ctx.left)
         return ops[op](self.visit(ctx.left), self.visit(ctx.right))
-
-    def visitComp_var(self, ctx: RubyParser.Comp_varContext):
-        if ctx.id_():
-            return self.visit(ctx.id_())
 
     def visitInt_assignment(self, ctx: RubyParser.Int_assignmentContext):
         op = ctx.op.type
