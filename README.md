@@ -224,7 +224,8 @@ string_assignment : var_id=lvalue op=ASSIGN string_result
                   | var_id=lvalue op=PLUS_ASSIGN string_result
                   ;
 
-initial_array_assignment : var_id=lvalue op=ASSIGN LEFT_SBRACKET RIGHT_SBRACKET;
+initial_array_assignment : var_id=lvalue op=ASSIGN LEFT_SBRACKET RIGHT_SBRACKET
+                         | var_id=lvalue op=ASSIGN array_definition;
 
 array_assignment : arr_def=array_selector op=ASSIGN arr_val=all_result;
 
