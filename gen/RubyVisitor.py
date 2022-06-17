@@ -83,7 +83,7 @@ class RubyVisitor(ParseTreeVisitor):
     def visitReturn_statement(self, ctx:RubyParser.Return_statementContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#function_call.
     def visitFunction_call(self, ctx:RubyParser.Function_callContext):
         return self.visitChildren(ctx)
@@ -93,7 +93,7 @@ class RubyVisitor(ParseTreeVisitor):
     def visitFunction_call_param_list(self, ctx:RubyParser.Function_call_param_listContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#function_call_params.
     def visitFunction_call_params(self, ctx:RubyParser.Function_call_paramsContext):
         return self.visitChildren(ctx)
@@ -128,12 +128,12 @@ class RubyVisitor(ParseTreeVisitor):
     def visitElsif_statement(self, ctx:RubyParser.Elsif_statementContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#if_elsif_statement.
     def visitIf_elsif_statement(self, ctx:RubyParser.If_elsif_statementContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#if_statement.
     def visitIf_statement(self, ctx:RubyParser.If_statementContext):
         return self.visitChildren(ctx)
@@ -203,12 +203,12 @@ class RubyVisitor(ParseTreeVisitor):
     def visitDynamic_assignment(self, ctx:RubyParser.Dynamic_assignmentContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#int_assignment.
     def visitInt_assignment(self, ctx:RubyParser.Int_assignmentContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#float_assignment.
     def visitFloat_assignment(self, ctx:RubyParser.Float_assignmentContext):
         return self.visitChildren(ctx)
@@ -253,7 +253,7 @@ class RubyVisitor(ParseTreeVisitor):
     def visitDynamic_(self, ctx:RubyParser.Dynamic_Context):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#int_result.
     def visitInt_result(self, ctx:RubyParser.Int_resultContext):
         return self.visitChildren(ctx)
@@ -268,17 +268,17 @@ class RubyVisitor(ParseTreeVisitor):
     def visitString_result(self, ctx:RubyParser.String_resultContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#comparison_list.
     def visitComparison_list(self, ctx:RubyParser.Comparison_listContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#comparison.
     def visitComparison(self, ctx:RubyParser.ComparisonContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#comp_var.
     def visitComp_var(self, ctx:RubyParser.Comp_varContext):
         return self.visitChildren(ctx)
@@ -304,27 +304,27 @@ class RubyVisitor(ParseTreeVisitor):
     def visitFloat_t(self, ctx:RubyParser.Float_tContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#int_t.
     def visitInt_t(self, ctx:RubyParser.Int_tContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#bool_t.
     def visitBool_t(self, ctx:RubyParser.Bool_tContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#nil_t.
     def visitNil_t(self, ctx:RubyParser.Nil_tContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#id_.
     def visitId_(self, ctx:RubyParser.Id_Context):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#id_global.
     def visitId_global(self, ctx:RubyParser.Id_globalContext):
         return self.visitChildren(ctx)
@@ -339,7 +339,7 @@ class RubyVisitor(ParseTreeVisitor):
     def visitElse_token(self, ctx:RubyParser.Else_tokenContext):
         return self.visitChildren(ctx)
 
-
+    ##DONE##
     # Visit a parse tree produced by RubyParser#crlf.
     def visitCrlf(self, ctx:RubyParser.CrlfContext):
         return self.visitChildren(ctx)

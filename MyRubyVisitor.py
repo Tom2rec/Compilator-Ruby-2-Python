@@ -111,7 +111,7 @@ class MyRubyVisitor(RubyVisitor):
         }
         op = ctx.op.type
 
-        return ops[op](self.visit(ctx.left.comp_var()), self.visit(ctx.right.comp_var()))
+        return ops[op](self.visit(ctx.left), self.visit(ctx.right))
 
     def visitComp_var(self, ctx: RubyParser.Comp_varContext):
         if ctx.id_():
