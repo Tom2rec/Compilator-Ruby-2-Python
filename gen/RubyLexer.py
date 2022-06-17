@@ -1,9 +1,12 @@
-# Generated from /home/tturek/Documents/personal/UST/Sophomore_2/Compilators/Compilator-Ruby-2-Python/Project/Ruby.g4 by ANTLR 4.10.1
+# Generated from /home/tturek/Documents/personal/UST/Sophomore_2/Compilators/Ruby-2-Python/Project/Ruby.g4 by ANTLR 4.10.1
 from antlr4 import *
 from io import StringIO
 import sys
 if sys.version_info[1] > 5:
     from typing import TextIO
+else:
+    from typing.io import TextIO
+
 
 def serializedATN():
     return [

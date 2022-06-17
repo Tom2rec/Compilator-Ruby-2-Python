@@ -1,4 +1,4 @@
-# Generated from /home/tturek/Documents/personal/UST/Sophomore_2/Compilators/Compilator-Ruby-2-Python/Project/Ruby.g4 by ANTLR 4.10.1
+# Generated from /home/tturek/Documents/personal/UST/Sophomore_2/Compilators/Ruby-2-Python/Project/Ruby.g4 by ANTLR 4.10.1
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .RubyParser import RubyParser
