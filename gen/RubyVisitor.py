@@ -1,4 +1,4 @@
-# Generated from /home/tturek/Documents/personal/UST/Sophomore_2/Compilators/Ruby-2-Python/Project/Ruby.g4 by ANTLR 4.10.1
+# Generated from C:/Informatyka_i_systemy_inteligentne/ROK II/Sem_4/Teoria_kompilacji_i_kompilatory/Project/Ruby-2-Python/Project\Ruby.g4 by ANTLR 4.10.1
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .RubyParser import RubyParser
@@ -296,6 +296,11 @@ class RubyVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by RubyParser#break_expression.
     def visitBreak_expression(self, ctx:RubyParser.Break_expressionContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RubyParser#literal_t.
+    def visitLiteral_t(self, ctx:RubyParser.Literal_tContext):
         return self.visitChildren(ctx)
 
 
