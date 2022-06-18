@@ -142,7 +142,14 @@ class OwnRubyVisitor(RubyVisitor):
         return "if not " + self.visit_child_nodes(ctx.children[1:])
 
     def visitWhile_statement(self, ctx: RubyParser.While_statementContext):
-        return self.visit_child_nodes(ctx.children)
+        result = ""
+        result += str(ctx.WHILE())
+        result += " "
+        result += self.visit(ctx.cond_expression())
+        result += ":"
+        result += self.visit(ctx.crlf())
+        result += self.visit(ctx.statement_body())
+        return result
 
     def visitFor_statement(self, ctx: RubyParser.For_statementContext):
         result = self.visit(ctx.init_expression())
@@ -161,6 +168,15 @@ class OwnRubyVisitor(RubyVisitor):
 
     def visitFor_loop_list(self, ctx: RubyParser.For_loop_listContext):
         return self.visit_params(ctx)
+
+    def visitStatement_body(self, ctx:RubyParser.Statement_bodyContext):
+        result = ""
+        for line in self.visitChildren(ctx).split("\n"):
+            result += "\t"
+            result += line
+            result += "\n"
+
+        return result
 
     def visitStatement_expression_list(self, ctx: RubyParser.Statement_expression_listContext):
         return self.visit_child_nodes(ctx.children)
@@ -215,10 +231,25 @@ class OwnRubyVisitor(RubyVisitor):
         return self.visit_child_nodes(ctx.children)
 
     def visitComparison_list(self, ctx: RubyParser.Comparison_listContext):
-        return self.visit_child_nodes(ctx.children)
+        result = ""
+        if ctx.AND() or ctx.AND():
+            result += self.visit(ctx.comparison())
+            result += " "
+            result += ctx.op.text
+            result += " "
+            result += self.visit(ctx.comparison_list())
+        else:
+            result += self.visit_child_nodes(ctx.children)
+        return result
 
     def visitComparison(self, ctx: RubyParser.ComparisonContext):
-        return self.visit_child_nodes(ctx.children)
+        result = ""
+        result += self.visit(ctx.left)
+        result += " "
+        result += ctx.op.text
+        result += " "
+        result += self.visit(ctx.right)
+        return result
 
     def visitRvalue(self, ctx: RubyParser.RvalueContext):
         return self.visit_child_nodes(ctx.children)
