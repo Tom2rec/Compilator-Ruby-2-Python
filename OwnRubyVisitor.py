@@ -56,44 +56,19 @@ class OwnRubyVisitor(RubyVisitor):
                 result += self.visit(child)
         return result
 
-    def visitGlobal_get(self, ctx: RubyParser.Global_getContext):
-        result = ""
-        if ctx.var_name[0] == "$":
-            result += ctx.var_name[1:]
-        else:
-            result += ctx.var_name
-
-        result += " = "
-
-        if ctx.global_name[0] == "$":
-            result += ctx.global_name[1:]
-        else:
-            result += ctx.global_name
-
-        return result
-
-    def visitGlobal_set(self, ctx: RubyParser.Global_setContext):
-        result = ""
-        result += "global "
-        result += str(ctx.global_name.ID_GLOBAL())[1:]
-        result += " = "
-        result += self.visit(ctx.result)
-
-        return result
-
     def visitFunction_definition(self, ctx: RubyParser.Function_definitionContext):
         return self.visit_child_nodes(ctx.children)
 
     def visitFunction_definition_header(self, ctx: RubyParser.Function_definition_headerContext):
         return "def " + self.visit_child_nodes(ctx.children[1:])
 
-    def visitFunction_name(self, ctx:RubyParser.Function_nameContext):
+    def visitFunction_name(self, ctx: RubyParser.Function_nameContext):
         if ctx.getText() == "puts":
             return "print"
 
         return self.visitChildren(ctx)
 
-    def visitFunction_definition_body(self, ctx:RubyParser.Function_definition_bodyContext):
+    def visitFunction_definition_body(self, ctx: RubyParser.Function_definition_bodyContext):
         result = "\t"
         for char in self.visit(ctx.expression_list()):
             result += char
@@ -184,7 +159,7 @@ class OwnRubyVisitor(RubyVisitor):
     def visitFor_loop_list(self, ctx: RubyParser.For_loop_listContext):
         return self.visit_params(ctx)
 
-    def visitStatement_body(self, ctx:RubyParser.Statement_bodyContext):
+    def visitStatement_body(self, ctx: RubyParser.Statement_bodyContext):
         result = ""
         for line in self.visitChildren(ctx).split("\n"):
             result += "\t"
@@ -287,9 +262,6 @@ class OwnRubyVisitor(RubyVisitor):
     def visitId_(self, ctx: RubyParser.Id_Context):
         return ctx.getText()
 
-    def visitId_global(self, ctx: RubyParser.Id_globalContext):
-        return ctx.getText()[1:]
-
     def visitTerminator(self, ctx: RubyParser.TerminatorContext):
         result = ""
         for _ in ctx.children:
@@ -303,6 +275,5 @@ class OwnRubyVisitor(RubyVisitor):
     def visitCrlf(self, ctx: RubyParser.CrlfContext):
         return "\n"
 
-    def visitLiteral_t(self, ctx:RubyParser.Literal_tContext):
+    def visitLiteral_t(self, ctx: RubyParser.Literal_tContext):
         return str(ctx.LITERAL())
-
