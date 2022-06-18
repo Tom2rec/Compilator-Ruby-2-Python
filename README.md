@@ -6,7 +6,7 @@
 #### Ogólne cele programu
 - Stworzenie programu, który będzie umożliwiał pisanie kodu w Ruby oraz jego wykonaie w Pythonie
 #### Rodzaj translatora
-- interpreter
+- kompilator
 #### Planowany wynik działania programu
 - Translacja kodu z **Ruby** do **Pythona**
 - Możliwość uruchamiania kodu w **Pythonie**
@@ -370,7 +370,7 @@ crlf : CRLF;
 1. Lexer ANTLR4 -> Python
 2. Parser ANTLR4 -> Python
 3. Visitor Python
-4. Interpreter Python
+4. Kompilator Python
 
 ## Informacje o stosowanych narzędziach i technologiach
 - Technologie  
