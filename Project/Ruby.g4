@@ -193,6 +193,7 @@ float_result : float_result op=( MUL | DIV | MOD ) float_result
 string_result : string_result op=MUL int_result
               | int_result op=MUL string_result
               | string_result op=PLUS string_result
+              | literal_t
               ;
 
 comparison_list : left=comparison op=AND right=comparison_list
@@ -201,9 +202,7 @@ comparison_list : left=comparison op=AND right=comparison_list
                 | comparison
                 ;
 
-comparison : left=comp_var op=( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL ) right=comp_var
-           | left=comp_var op=( EQUAL | NOT_EQUAL ) right=comp_var
-           ;
+comparison : left=comp_var op=( LESS | GREATER | LESS_EQUAL | GREATER_EQUAL | EQUAL | NOT_EQUAL ) right=comp_var;
 
 comp_var : all_result
          | array_selector
@@ -232,6 +231,7 @@ rvalue : lvalue
        | assignment
 
        | function_call
+       | literal_t
        | bool_t
        | float_t
        | int_t
@@ -254,6 +254,8 @@ rvalue : lvalue
        ;
 
 break_expression : BREAK;
+
+literal_t : LITERAL;
 
 float_t : FLOAT;
 
@@ -278,6 +280,10 @@ terminator : terminator SEMICOLON
 else_token : ELSE;
 
 crlf : CRLF;
+
+fragment ESCAPED_QUOTE : '\\"';
+LITERAL : '"' ( ESCAPED_QUOTE | ~('\n'|'\r') )*? '"'
+        | '\'' ( ESCAPED_QUOTE | ~('\n'|'\r') )*? '\'';
 
 COMMA : ',';
 SEMICOLON : ';';
