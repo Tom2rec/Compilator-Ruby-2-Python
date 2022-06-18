@@ -1,4 +1,4 @@
-# Generated from C:/Informatyka_i_systemy_inteligentne/ROK II/Sem_4/Teoria_kompilacji_i_kompilatory/Project/Ruby-2-Python/Project\Ruby.g4 by ANTLR 4.10.1
+# Generated from /home/tturek/Documents/personal/UST/Sophomore_2/Compilators/Ruby-2-Python/Project/Ruby.g4 by ANTLR 4.10.1
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .RubyParser import RubyParser
@@ -21,21 +21,6 @@ class RubyVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by RubyParser#expression.
     def visitExpression(self, ctx:RubyParser.ExpressionContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RubyParser#global_get.
-    def visitGlobal_get(self, ctx:RubyParser.Global_getContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RubyParser#global_set.
-    def visitGlobal_set(self, ctx:RubyParser.Global_setContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RubyParser#global_result.
-    def visitGlobal_result(self, ctx:RubyParser.Global_resultContext):
         return self.visitChildren(ctx)
 
 
@@ -326,11 +311,6 @@ class RubyVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by RubyParser#id_.
     def visitId_(self, ctx:RubyParser.Id_Context):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RubyParser#id_global.
-    def visitId_global(self, ctx:RubyParser.Id_globalContext):
         return self.visitChildren(ctx)
 
 

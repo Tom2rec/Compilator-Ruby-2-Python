@@ -1,4 +1,4 @@
-# Generated from C:/Informatyka_i_systemy_inteligentne/ROK II/Sem_4/Teoria_kompilacji_i_kompilatory/Project/Ruby-2-Python/Project\Ruby.g4 by ANTLR 4.10.1
+# Generated from /home/tturek/Documents/personal/UST/Sophomore_2/Compilators/Ruby-2-Python/Project/Ruby.g4 by ANTLR 4.10.1
 from antlr4 import *
 if __name__ is not None and "." in __name__:
     from .RubyParser import RubyParser
@@ -35,34 +35,7 @@ class RubyListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by RubyParser#global_get.
-    def enterGlobal_get(self, ctx:RubyParser.Global_getContext):
-        pass
-
-    # Exit a parse tree produced by RubyParser#global_get.
-    def exitGlobal_get(self, ctx:RubyParser.Global_getContext):
-        pass
-
-
-    # Enter a parse tree produced by RubyParser#global_set.
-    def enterGlobal_set(self, ctx:RubyParser.Global_setContext):
-        pass
-
-    # Exit a parse tree produced by RubyParser#global_set.
-    def exitGlobal_set(self, ctx:RubyParser.Global_setContext):
-        pass
-
-
-    # Enter a parse tree produced by RubyParser#global_result.
-    def enterGlobal_result(self, ctx:RubyParser.Global_resultContext):
-        pass
-
-    # Exit a parse tree produced by RubyParser#global_result.
-    def exitGlobal_result(self, ctx:RubyParser.Global_resultContext):
-        pass
-
-
-    # Enter a parse tree produced by RubyParser#function_inline_call.
+    # Enter a parse tree produced by RubyParser#function_in_call.
     def enterFunction_inline_call(self, ctx:RubyParser.Function_inline_callContext):
         pass
 
@@ -581,15 +554,6 @@ class RubyListener(ParseTreeListener):
 
     # Exit a parse tree produced by RubyParser#id_.
     def exitId_(self, ctx:RubyParser.Id_Context):
-        pass
-
-
-    # Enter a parse tree produced by RubyParser#id_global.
-    def enterId_global(self, ctx:RubyParser.Id_globalContext):
-        pass
-
-    # Exit a parse tree produced by RubyParser#id_global.
-    def exitId_global(self, ctx:RubyParser.Id_globalContext):
         pass
 
 
