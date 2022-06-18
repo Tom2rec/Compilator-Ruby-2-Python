@@ -387,6 +387,10 @@ crlf : CRLF;
 
 ## Instrukcja obsługi
 
+Przykłady należy umieścić w folderze *Example* i podczas działania programu posługiwać się tylko nazwami plików.
+
+Rezultat działania programu zostanie umieszczony w głównym folderze.
+
 ```bash
 git clone git@github.com:Tom2rec/Ruby-2-Python.git 
 ```
@@ -397,5 +401,5 @@ cd Ruby-2-Python
 pip install requirements.txt
 ```
 ```bash
-python3 main.py Examples/test.rb
+python3 Main.py
 ```
