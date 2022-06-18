@@ -1,7 +1,7 @@
-i = 0
-num = 11
+$i = 0
+$num = 5
 
-while (i < num or i <= num)
-   print(i)
-   i +=1
+while $i < $num
+   puts("Inside the loop i = #$i" )
+   $i +=1
 end
