@@ -81,14 +81,17 @@ class OwnRubyVisitor(RubyVisitor):
 
         return result
 
-    def visitGlobal_result(self, ctx: RubyParser.Global_resultContext):
-        return ctx.id_global()[1:]
-
     def visitFunction_definition(self, ctx: RubyParser.Function_definitionContext):
         return self.visit_child_nodes(ctx.children)
 
     def visitFunction_definition_header(self, ctx: RubyParser.Function_definition_headerContext):
         return "def " + self.visit_child_nodes(ctx.children[1:])
+
+    def visitFunction_name(self, ctx:RubyParser.Function_nameContext):
+        if ctx.getText() == "puts":
+            return "print"
+
+        return self.visitChildren(ctx)
 
     def visitFunction_definition_body(self, ctx:RubyParser.Function_definition_bodyContext):
         result = "\t"
@@ -133,10 +136,22 @@ class OwnRubyVisitor(RubyVisitor):
         return self.visit_child_nodes(ctx.children)
 
     def visitIf_elsif_statement(self, ctx: RubyParser.If_elsif_statementContext):
-        return self.visit_child_nodes(ctx.children)
+        result = ""
+        result += "elif "
+        result += self.visit(ctx.cond_expression())
+        result += ":"
+        result += self.visit_child_nodes(ctx.children[2:])
+        return result
 
     def visitIf_statement(self, ctx: RubyParser.If_statementContext):
-        return self.visit_child_nodes(ctx.children)
+        result = ""
+        result += str(ctx.IF())
+        result += " "
+        result += self.visit(ctx.cond_expression())
+        result += ":"
+        result += self.visit_child_nodes(ctx.children[2:])
+
+        return result
 
     def visitUnless_statement(self, ctx: RubyParser.Unless_statementContext):
         return "if not " + self.visit_child_nodes(ctx.children[1:])
@@ -232,7 +247,7 @@ class OwnRubyVisitor(RubyVisitor):
 
     def visitComparison_list(self, ctx: RubyParser.Comparison_listContext):
         result = ""
-        if ctx.AND() or ctx.AND():
+        if ctx.AND() or ctx.OR():
             result += self.visit(ctx.comparison())
             result += " "
             result += ctx.op.text
@@ -283,8 +298,11 @@ class OwnRubyVisitor(RubyVisitor):
         return result
 
     def visitElse_token(self, ctx: RubyParser.Else_tokenContext):
-        return ctx.getText()
+        return ctx.getText() + ":"
 
     def visitCrlf(self, ctx: RubyParser.CrlfContext):
         return "\n"
+
+    def visitLiteral_t(self, ctx:RubyParser.Literal_tContext):
+        return str(ctx.LITERAL())
 
