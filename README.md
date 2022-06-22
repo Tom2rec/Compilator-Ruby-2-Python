@@ -385,7 +385,7 @@ git clone git@github.com:Tom2rec/Ruby-2-Python.git
 cd Ruby-2-Python
 ```
 ```bash
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 ```bash
 python3 Main.py
