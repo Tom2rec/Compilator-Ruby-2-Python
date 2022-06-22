@@ -78,7 +78,6 @@ WHITE_SPACE : (' '|'\t')+ -> skip;
 INT : [0-9]+;
 FLOAT : [0-9]*'.'[0-9]+;
 ID : [a-zA-Z_][a-zA-Z0-9_]*;
-ID_GLOBAL : '$'ID;
 ```
 
 ## Gramatyka **Ruby** w postaci **ANTLR4**
@@ -102,12 +101,6 @@ expression : function_definition
            | while_statement
            | for_statement
            ;
-
-global_get : var_name=lvalue op=ASSIGN global_name=id_global;
-
-global_set : global_name=id_global op=ASSIGN result=all_result;
-
-global_result : id_global;
 
 function_inline_call : function_call;
 
@@ -153,7 +146,7 @@ function_named_param : id_ op=ASSIGN ( int_result | float_result | string_result
 
 function_call_assignment : function_call;
 
-all_result : ( int_result | float_result | string_result | dynamic_result | global_result );
+all_result : ( int_result | float_result | string_result | dynamic_result );
 
 elsif_statement : if_elsif_statement;
 
@@ -236,7 +229,6 @@ array_definition_elements : ( int_result | dynamic_result )
                           ;
 
 array_selector : id_ LEFT_SBRACKET ( int_result | dynamic_result ) RIGHT_SBRACKET
-               | id_global LEFT_SBRACKET ( int_result | dynamic_result ) RIGHT_SBRACKET
                ;
 
 dynamic_result : dynamic_result op=( MUL | DIV | MOD ) int_result
@@ -297,7 +289,6 @@ comp_var : all_result
          ;
 
 lvalue : id_
-       | id_global
        ;
 
 rvalue : lvalue
@@ -309,8 +300,6 @@ rvalue : lvalue
        | float_result
        | string_result
 
-       | global_set
-       | global_get
        | dynamic_assignment
        | string_assignment
        | float_assignment
@@ -352,8 +341,6 @@ bool_t : TRUE
 nil_t : NIL;
 
 id_ : ID;
-
-id_global : ID_GLOBAL;
 
 terminator : terminator SEMICOLON
            | terminator crlf
